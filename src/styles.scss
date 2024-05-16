@@ -1,0 +1,160 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$EcomAdmin-primary: mat.define-palette(mat.$indigo-palette);
+$EcomAdmin-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$EcomAdmin-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$EcomAdmin-theme: mat.define-light-theme((
+  color: (
+    primary: $EcomAdmin-primary,
+    accent: $EcomAdmin-accent,
+    warn: $EcomAdmin-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($EcomAdmin-theme);
+
+/*
+*  html5resetcss
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; padding: 0; }
+
+// .hoverOncard :hover{
+//   scale:1.05;
+//   transition: 0.1s;
+
+// }
+.input-box{
+  outline: none !important;
+}
+// .mat-dialog-container {
+//   max-width: 1600px !important;
+//   background-color: white !important;
+// }
+.opendialog-container .mat-dialog-container {
+  padding: 0 !important;
+  border-radius: 20px !important;
+  max-width: 100% !important;
+}
+.activeroute{
+  // color: black !important;
+  // background-color: #ccc;
+  color: gray;
+}
+.hover-item :hover{
+  color: gray !important;
+}
+// .mat-form-field-wrapper{
+//   padding: 0px !important;
+// }
+.mat-button{
+  color: rgb(159, 7, 7);
+}
+.wandering-button {
+  cursor: pointer;
+  animation: wander 5s infinite alternate;
+}
+.project-bg{
+  background-color: rgb(53,119,141);
+}
+.mat-select-value{
+  color: black !important;
+}
+.mat-form-field-wrapper{
+  padding-bottom: 0px !important;
+}
+.mat-form-field-underline {
+  bottom: 0.34375em !important;
+}
+.mat-form-field-subscript-wrapper{
+  top: calc(100% - 0.791667em)
+}
+
+@keyframes wander {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.scaling-element {
+  transition: transform 0.4s ease-in-out; /* Smooth transition on hover */
+}
+
+.scaling-element:hover {
+  transform: scale(1.04); /* Scale to 1.5 times on hover */
+}
+
+.animated-text {
+  animation: textAnimation 2s ease-in-out infinite alternate;
+}
+
+@keyframes textAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
+.icon{
+  animation: iconAnimation 1s ease-in-out infinite alternate;
+}
+
+@keyframes iconAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

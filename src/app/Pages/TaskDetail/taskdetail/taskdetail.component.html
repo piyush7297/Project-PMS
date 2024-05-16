@@ -1,0 +1,93 @@
+<app-header></app-header>
+<div class="container-fluid pt-5 mt-5 pb-4">
+  <div class="container">
+    <h2 class="text-danger heading">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="fs-2 text-dark m-0 tex">
+          {{taskName}}
+        </h2>
+        <span class="text-dark">
+          <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="bg-white">
+            <button mat-menu-item>Edit</button>
+            <button mat-menu-item (click)="openremoveDialog()">Remove</button>
+          </mat-menu>
+        </span>
+      </div>
+    </h2>
+    <div class="row gap-4 rounded-3">
+      <section
+        class="col-lg-3 col-md-4 col-sm-12 col-12 text-center rounded-3 p-0"
+      >
+        <img
+          class="project-bg rounded-3 card-img-top bg-white"
+          src="https://img.freepik.com/premium-vector/document-icon-with-3d-style_71773-659.jpg?w=740"
+          alt="..."
+        />
+      </section>
+      <section class="col-lg-8 col-md-7 col-sm-12 col-12 pt-2 p-0">
+        <div class="d-flex flex-column gap-2">
+          <h4 class=" fw-bold d-flex align-items-center">
+            Description <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ task.task }}</span>
+          </h4>
+          <h4 class=" fw-bold d-flex align-items-center">
+            Status <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ task.status }}</span>
+          </h4>
+          <h4 class=" fw-bold d-flex align-items-center">
+            Project <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ task.project }}</span>
+          </h4>
+          <h4 class=" fw-bold d-flex align-items-center">
+            Start-Date <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ task.startdate }}</span>
+          </h4>
+          <h4 class=" fw-bold d-flex align-items-center">
+            End-Date <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ task.enddate }}</span>
+          </h4>
+          <h4 class=" fw-bold d-flex align-items-center">
+            Assigned Team <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ taskTeam.length }}</span>
+          </h4>
+        </div>
+        <div
+          class="d-flex flex-column gap-2 col-lg-5 col-md-5 col-sm-12 col-12"
+        >
+        <div class="d-flex justify-content-between">
+          <button
+              class="text-secondary d-flex align-items-center border"
+              mat-button
+              (click)="openviewteamDialog()"
+            >
+             View Task Team
+            </button>
+            <button
+            class="text-success d-flex align-items-center border"
+            mat-button
+            (click)="openfilterteamDialog()"
+          >
+            <mat-icon>group_add</mat-icon> Assign more Team
+          </button>
+        </div>
+        </div>
+        <!-- <div
+          class="d-flex flex-column gap-2 col-lg-5 col-md-5 col-sm-12 col-12"
+        >
+          <h2 class="m-0 p-0 text-warning fw-bolder">Task</h2>
+          <div
+            class="d-flex align-items-center justify-content-between fw-bold"
+          >
+            <h3 class="text-dark p-0 m-0">Pending Tasks {{ totalTeam }}</h3>
+            <button class="text-warning" mat-button (click)="openviewteamDialog()">
+              View All
+            </button>
+          </div>
+        </div> -->
+      </section>
+    </div>
+  </div>
+</div>

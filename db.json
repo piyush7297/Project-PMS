@@ -1,0 +1,562 @@
+{
+  "team": [
+    {
+      "id": "8d05",
+      "name": "Khushal Soni",
+      "email": "khushalsoni@gmail.com",
+      "phone": "9827479202",
+      "role": "Web Developer",
+      "address": "Sojati Gate",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "Above 10 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "c09c",
+      "name": "Dhiraj",
+      "email": "dhiraj@gmail.com",
+      "phone": "8492834902",
+      "role": "Tester",
+      "address": "Shastri Circle",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "7 LPA to 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "2676",
+      "name": "Vipul ",
+      "email": "vipul99@gmail.com",
+      "phone": "8301833874",
+      "role": "Business Developer",
+      "address": "Sardarpura , Jodhpur",
+      "gender": "Male",
+      "profession": "IT & Sales",
+      "salary": "5 LPA to 7 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "f81a",
+      "name": "Siddharth Sharma",
+      "email": "sid123@gmail.com",
+      "phone": "8398283298",
+      "role": "Backend Developer",
+      "address": "Sardarpura , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "5 LPA to 7 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "a4f5",
+      "name": "Prakash Chandra",
+      "email": "prakash@gmail.com",
+      "phone": "9829309865",
+      "role": "App Developer",
+      "address": "123,A Sardarpura , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "5 LPA to 7 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "a474",
+      "name": "Mitanshu Narawat",
+      "email": "mitanshu123@gmail.com",
+      "phone": "7892093872",
+      "role": "IOS Developer",
+      "address": "21B , Shastri Nagar , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "5 LPA to 7 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "8204",
+      "name": "Harshita Gehlot",
+      "email": "harshita123@gmail.com",
+      "phone": "7839201182",
+      "role": "Senior Tester",
+      "address": "123unknown , Jodhpur",
+      "gender": "Female",
+      "profession": "Software Engineer",
+      "salary": "7 LPA to 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "8a6c",
+      "name": "Piyush Solanki",
+      "email": "piyush321@gmail.com",
+      "phone": "8923018349",
+      "role": "Business Developer",
+      "address": "213 C Paota, Jodhpur",
+      "gender": "Male",
+      "profession": "IT & Sales",
+      "salary": "5 LPA to 7 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "21cc",
+      "name": "Rahul Purohit",
+      "email": "purohitrahul@gmail.com",
+      "phone": "7839195437",
+      "role": "UI Designer",
+      "address": "Jalori Gate , Jodhpur",
+      "gender": "Male",
+      "profession": "UI designer",
+      "salary": "7 LPA to 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "c062",
+      "name": "Sahil Verma",
+      "email": "sahil321@gmail.com",
+      "phone": "7839195867",
+      "role": "Frontend Web Developer",
+      "address": "Shastri Nagar , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "5 LPA to 7 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "7c7d",
+      "name": "Priyanka Garg ",
+      "email": "gargpriyanka@gmail.com",
+      "phone": "8593013759",
+      "role": "Backend Web Developer",
+      "address": "Ratanada , Jodhpur ",
+      "gender": "Female",
+      "profession": "Software Engineer",
+      "salary": "5 LPA to 7 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "a0df",
+      "name": "Priyanka Purohit",
+      "email": "purohitpriyanka@gmail.com",
+      "phone": "7839013478",
+      "role": "Senior Backend Developer",
+      "address": "unknown , Jodhpur",
+      "gender": "Female",
+      "profession": "Software Engineer",
+      "salary": "7 LPA to 10 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "8ee3",
+      "name": "Tarun Khatri",
+      "email": "khatritarun12@gmail.com",
+      "phone": "9857263545",
+      "role": "App Developer",
+      "address": "Madhuwan , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "7 LPA to 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "ea6a",
+      "name": "Shubham Ratawa",
+      "email": "shubhamratawa@gmail.com",
+      "phone": "9384575894",
+      "role": "App Developer",
+      "address": "Mahamandir , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "7 LPA to 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "ac36",
+      "name": "Gaurav Khatri",
+      "email": "khatritarun@gmail.com",
+      "phone": "9883991033",
+      "role": "Backend Web Developer",
+      "address": "Ratanada , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "7 LPA to 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "8e39",
+      "name": "Piyush Sharma",
+      "email": "ps72978255@gmail.com",
+      "phone": "7297825537",
+      "role": "Frontend WebDeveloper",
+      "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "Below 3 LPA",
+      "project": "DopeShop"
+    },
+    {
+      "id": "efca",
+      "name": "Sourabh Goyal",
+      "email": "sourabhgoyal@gmail.com",
+      "phone": "9493854790",
+      "role": "Associate Sales Executive",
+      "address": "Kudi , Jodhpur",
+      "gender": "Male",
+      "profession": "IT & Sales",
+      "salary": "7 LPA to 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "7b92",
+      "name": "Divya Bhatnagar",
+      "email": "divya@gmail.com",
+      "phone": "8749267489",
+      "role": "Tester",
+      "address": "Ratanada , Jodhpur",
+      "gender": "Female",
+      "profession": "Software Engineer",
+      "salary": "5 LPA to 7 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "5973",
+      "name": "Tarachand Gehlot",
+      "email": "tarachand@gmail.com",
+      "phone": "9834894759",
+      "role": "Backend Web Developer",
+      "address": "Sursagar , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "5 LPA to 7 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "262c",
+      "name": "Surender Singh",
+      "email": "surender@gmail.com",
+      "phone": "8393748499",
+      "role": "IOS Developer",
+      "address": "Unnown , Jodhpur",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "7 LPA to 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "d2ed",
+      "name": "Bhagyashree Daiya",
+      "email": "bhagyashree@gmail.com",
+      "phone": "8739274893",
+      "role": "Full Stack Web Developer",
+      "address": "Chopasni , Jodhpur",
+      "gender": "Female",
+      "profession": "Software Engineer",
+      "salary": "Above 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "7f67",
+      "name": "Girish Agarwal",
+      "email": "girish@gmail.com",
+      "phone": "9839374890",
+      "role": "Web Developer",
+      "address": "Narayan Nagar , Pali",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "Above 10 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "95b9",
+      "name": "Anuj Singh",
+      "email": "anuj@gmail.com",
+      "phone": 9385784055,
+      "role": "Project Manager",
+      "address": "Unknown , Jodhpur ",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "Above 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "1c5f",
+      "name": "Deveshi Sharma",
+      "email": "deveshree123@gmail.com",
+      "phone": "8493858490",
+      "role": "Customer Supporter",
+      "address": "Unknown , Jodhpur",
+      "gender": "Female",
+      "profession": "IT & Sales",
+      "salary": "Below 3 LPA",
+      "project": "OrderAxe"
+    },
+    {
+      "id": "a9d4",
+      "name": "Vishal Vaishnav",
+      "email": "vishalvaishnav@gmail.com",
+      "phone": "8920485968",
+      "role": "Cloud Architect",
+      "address": "Sardarpura , Jodhpur",
+      "gender": "Male",
+      "profession": "Cloud Engineer",
+      "salary": "Above 10 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "90d2",
+      "name": "Barbie Sobti",
+      "email": "barbiesobti@gmail.com",
+      "phone": "9348473649",
+      "role": "UI/UX Designer",
+      "address": "Unknown, Jodhpur",
+      "gender": "Female",
+      "profession": "UI designer",
+      "salary": "5 LPA to 7 LPA",
+      "project": "AJM Official"
+    }
+  ],
+  "projects": [
+    {
+      "id": "3530",
+      "name": "OrderAxe",
+      "category": "CMS",
+      "status": "Pending",
+      "started": "01/04/2021"
+    },
+    {
+      "id": "4954",
+      "name": "AJM Official",
+      "category": "CMS",
+      "status": "Completed",
+      "started": "09/03/2022"
+    },
+    {
+      "id": "d65e",
+      "name": "DopeShop",
+      "category": "ECOM",
+      "status": "Pending",
+      "started": "27/03/2024"
+    },
+    {
+      "id": "604a",
+      "name": "Ashapurna NRI",
+      "category": "IT & Sales",
+      "status": "Pending",
+      "started": "2023-06-14T18:30:00.000Z"
+    },
+    {
+      "id": "c396",
+      "name": "Adapt",
+      "category": "ECOM",
+      "status": "Pending",
+      "started": "2023-03-15T18:30:00.000Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "acdd",
+      "title": "Implement Remove Functionality",
+      "task": "remove functionality in team model viewproject and task detail page ",
+      "status": "Pending",
+      "startdate": "2024-05-14T18:30:00.000Z",
+      "enddate": "2024-05-15T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "a91e",
+      "title": "Implement remove functionality ",
+      "task": "in Add task model - remove button on team",
+      "status": "Pending",
+      "startdate": "2024-05-14T18:30:00.000Z",
+      "enddate": "2024-05-15T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "d3e5",
+      "title": "Assign more team functionality",
+      "task": "in add task page and task detail page filter assigned team from all team ",
+      "status": "Pending",
+      "startdate": "2024-05-14T18:30:00.000Z",
+      "enddate": "2024-05-16T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "4fc1",
+      "title": "Add paginator in viewteam page",
+      "task": "implement pagination functionality in view team page ",
+      "status": "Completed",
+      "startdate": "2024-05-13T18:30:00.000Z",
+      "enddate": "2024-05-14T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "d168",
+      "title": "Assign team in task module",
+      "task": "Assign team in Addtask model and show on form and reset the team and form after add task",
+      "status": "Completed",
+      "startdate": "2024-05-13T18:30:00.000Z",
+      "enddate": "2024-05-14T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "c316",
+      "title": "Emit event from dialog ",
+      "task": "emit event from remove dialog to remove team , task and project",
+      "status": "Pending",
+      "startdate": "2024-05-15T18:30:00.000Z",
+      "enddate": "2024-05-16T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "fe1a",
+      "title": "Pin team member ",
+      "task": "Pin team member to top performer ",
+      "status": "Pending",
+      "startdate": "2024-05-16T18:30:00.000Z",
+      "enddate": "2024-05-17T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "d51f",
+      "title": "Update Status in task and project module",
+      "task": "We can change the status to pending to completed or completed to pending ",
+      "status": "Pending",
+      "startdate": "2024-05-16T18:30:00.000Z",
+      "enddate": "2024-05-17T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "38c3",
+      "title": "Show all tasks of particular project",
+      "task": " in viewproject page :- Show all task in model add filter functionality on status ",
+      "status": "Pending",
+      "startdate": "2024-05-15T18:30:00.000Z",
+      "enddate": "2024-05-17T18:30:00.000Z",
+      "project": "DopeShop",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+<button
+  class="bg-warning text-black wandering-button"
+  type="button"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasScrolling"
+  aria-controls="offcanvasScrolling"
+  mat-icon-button
+  color="accent"
+  aria-label="Example icon button with a menu icon"
+>
+  <mat-icon>menu</mat-icon>
+</button>
+
+<div
+  class="offcanvas offcanvas-start sidenav"
+  data-bs-scroll="true"
+  data-bs-backdrop="false"
+  tabindex="-1"
+  id="offcanvasScrolling"
+  aria-labelledby="offcanvasScrollingLabel"
+>
+  <div
+    class="d-flex align-items-center justify-content-between py-3 px-4 bg-dark"
+  >
+    <div class="pt-1 fs-5 fw-bold d-flex text-white">
+      <span>I</span> <span>Con</span>
+      <p class="text-warning animated-text">T</p>
+      <span>rol</span>
+    </div>
+    <button
+      type="button"
+      class="btn-close p-2 bg-warning"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body bg-dark d-flex flex-column gap-3">
+    <a class="dropdown text-decoration-none"     routerLink="/project/viewproject">
+      <!-- <button
+        class="btn bg-info bg-opacity-50 w-100 text-white fw-bold d-flex align-items-center gap-2 justify-content-center"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <mat-icon>handyman</mat-icon> Project
+      </button> -->
+      <button
+      class="btn border-bottom border-1 rounded-0 w-100 text-white fw-bold d-flex align-items-center gap-2"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <mat-icon>handyman</mat-icon> Project
+    </button>
+    </a>
+    <a class="dropdown text-decoration-none" routerLink="/team/viewteam">
+      <!-- <button
+        class="btn w-100 bg-danger bg-opacity-50 text-white fw-bold d-flex align-items-center gap-2 justify-content-center"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <mat-icon>groups</mat-icon> Team
+      </button> -->
+      <button
+      class="btn w-100 border-bottom border-1 rounded-0 text-white fw-bold d-flex align-items-center gap-2"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <mat-icon>groups</mat-icon> Team
+    </button>
+    </a>
+    <a class="dropdown w-100 text-decoration-none" routerLink="/viewtask">
+      <!-- <button
+        class="btn w-100 bg-warning text-dark fw-bold d-flex align-items-center gap-2 justify-content-center"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <mat-icon>post_add</mat-icon> Task
+      </button> -->
+      <button
+      class="btn w-100 fw-bold d-flex align-items-center gap-2 border-bottom border-1 rounded-0 text-white"
+      type="button"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <mat-icon>post_add</mat-icon> Task
+    </button>
+      <!-- <ul class="bg-dark w-100 text-center p-0">
+        <li>
+          <a
+            class="py-1 w-100 dropdown-item fw-bold bg-dark border-bottom border-white text-white"
+            routerLink="/addtask"
+            >Add Task</a
+          >
+        </li>
+        <li>
+          <a
+            class="py-1 dropdown-item fw-bold bg-dark border-bottom border-white text-white"
+            routerLink="/viewtask"
+            >View Task</a
+          >
+        </li>
+      </ul> -->
+    </a>
+  </div>
+</div>
+
+<!-- <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="#offcanvasScrolling" aria-labelledby="offcanvasScrolling">
+  <div class="offcanvas-header ">
+    <h2 class="px-2 pt-2"  id="offcanvasExampleLabel">Manage</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body bg-dark d-flex flex-column gap-4">
+    <div>
+      <div class="btn-group dropend">
+        <button type="button" class="py-2 bg-warning navbtn rounded-2 text-decoration-none fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Project
+        </button>
+        <ul class="dropdown-menu bg-dark">
+          <li><a class="dropdown-item fw-bold bg-dark border-bottom border-white text-white" routerLink="/project/addproject">Add Project</a></li>
+          <li><a class="dropdown-item fw-bold bg-dark border-bottom border-white text-white" routerLink="/project/viewproject">View Project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <div class="btn-group dropend">
+        <button type="button" class="py-2    navbtn rounded-2 text-decoration-none bg-warning fw-bold dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Team
+        </button>
+        <ul class="dropdown-menu bg-dark">
+          <li><a class="dropdown-item fw-bold bg-dark border-bottom border-white text-white" routerLink="/team/addteam">Add Team Member</a></li>
+          <li><a class="dropdown-item fw-bold bg-dark border-bottom border-white text-white" routerLink="/team/viewteam">View Team</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- Split dropend button -->
+
+<!-- Two -->
+<!-- <div class="dropdown mt-3">
+      <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        <a href="" class="text-decoration-none fw-bold text-dark " > Product</a>
+      </button>
+      <ul class="dropdown-menu bg-dark ">
+        <li><a class="dropdown-item fw-bold bg-dark border-bottom border-white text-white" href="#">Add Product</a></li>
+        <li><a class="dropdown-item fw-bold bg-dark border-bottom border-white text-white" href="#">View Product</a></li>
+      </ul>
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown">
+        <a href="" class="text-decoration-none fw-bold text-dark " > Product</a>
+      </button>
+      <ul class="dropdown-menu bg-dark ">
+        <li><a class="dropdown-item fw-bold bg-dark border-bottom border-white text-white" href="#">Add Product</a></li>
+        <li><a class="dropdown-item fw-bold bg-dark border-bottom border-white text-white" href="#">View Product</a></li>
+      </ul>
+    </div>
+  </div>
+</div> -->

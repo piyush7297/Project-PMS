@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <div class="container">
+    <div class="row justify-content-around gy-3">
+      <section class="col-lg-4 col-md-12 col-sm-12 col-12 bg-dark p-2 rounded-3 scaling-element">
+        <div class="card border-2 border-warning shadow-lg p-2 bg-dark text-white lastCOl">
+          <div class="card-title">
+            <h2>Status</h2>
+          </div>
+          <table>
+            <thead class="text-center bg-danger">
+              <th>Project</th>
+              <th>Status</th>
+              <th>Started</th>
+            </thead>
+            <tbody class="fw-bold pt-2">
+              <tr *ngFor="let project of projects" class="mb-2 text-center">
+                <td >{{project.name}}</td>
+                <td>
+                  <p class="bg-success" *ngIf=" project.status === 'Completed' ; else loggedout">
+                    Completed
+                  </p>
+                  <ng-template  #loggedout>
+                    <p class="bg-warning text-dark">Pending</p>
+                  </ng-template>
+                </td>
+                <td>{{project.started}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- <footer class="">
+            <mat-paginator class="bg-dark" [length]="projects.length"
+          [pageSize]="4"
+          [pageSizeOptions]="[4, 10, 25, 100]"
+          aria-label="Select page">
+      </mat-paginator>
+          </footer> -->
+        </div>
+      </section>
+      <section class="col-lg-4 col-md-12 col-sm-12 col-12 d-flex flex-column bg-dark pt-3 rounded-3 gap-4 scaling-element">
+        <div class="card border-2 border-warning bg-danger shadow-lg p-2 bg-dark text-white">
+          <div class="card-title">
+            <h2 class="text-warning">Pending Projects</h2>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h3>Currently {{pending}} projects are Pending</h3>
+            <button class="btn btn-warning" routerLink="/project/projectstatus/pending">See All</button>
+          </div>
+        </div>
+        <div class="card border-2 border-success shadow-lg p-2 bg-dark text-white">
+          <div class="card-title">
+            <h2 class="text-success">Completed Projects</h2>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h3>Currently {{completed}} projects are Completed</h3>
+            <button class="btn btn-success" routerLink="/project/projectstatus/completed">See All</button>
+          </div>
+        </div>
+      </section>
+      <!-- <section class="col-lg-4 col-md-12 col-sm-12 col-12 bg-dark p-2 rounded-3 scaling-element">
+        <div class="card border-2 border-warning shadow-lg p-2 bg-dark text-white lastCOl">
+          <div class="card-title ">
+            <h2>Status</h2>
+          </div>
+          <table>
+            <thead class="text-center bg-danger">
+              <th>Project</th>
+              <th>Status</th>
+              <th>Started</th>
+            </thead>
+            <tbody class="fw-bold pt-2">
+              <tr *ngFor="let project of projects" class="mb-2 text-center">
+                <td >{{project.name}}</td>
+                <td>
+                  <p class="bg-success" *ngIf=" project.status === 'Completed' ; else loggedout">
+                    Completed
+                  </p>
+                  <ng-template  #loggedout>
+                    <p class="bg-warning text-dark">Pending</p>
+                  </ng-template>
+                </td>
+                <td>{{project.started}}</td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section> -->
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="card-description d-flex flex-column gap-2">
+  <div class="d-flex justify-content-between">
+    <span>Status</span>
+    <span class="bg-success p-2 text-white">Completed</span>
+  </div>
+  <div class="d-flex justify-content-between">
+    <span>Status</span>
+    <span class="bg-warning p-2 text-dark">Panding</span>
+  </div>
+</div> -->

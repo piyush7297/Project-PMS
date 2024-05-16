@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row border border-3 border-warning ">
+    <div class="col-9 p-0 m-0 " >
+      <input
+        type="search"
+        [placeholder]="placeHoldertext"
+        (input)="onSearchTextChanged()"
+        [(ngModel)]="searchValue"
+        class="w-100 text-decoration-none border-0 p-2 input-box h-100"
+      />
+    </div>
+    <div class="col-3 bg-warning text-center py-2 fw-bold">
+      <span class="material-icons"> search </span>
+    </div>
+  </div>
+</div>

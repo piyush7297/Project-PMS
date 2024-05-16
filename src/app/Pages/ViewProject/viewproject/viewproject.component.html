@@ -1,0 +1,127 @@
+<app-header></app-header>
+<div class="container-fluid pt-5 mt-5 pb-3">
+  <div class="container">
+    <h2 class="text-danger heading">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="fs-2 text-secondary m-0">
+          <span class="text-danger fs-4">About</span> {{ projectName }}
+        </h2>
+        <span class="text-dark">
+          <button mat-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" class="bg-white">
+            <button mat-menu-item>Edit</button>
+            <button mat-menu-item (click)="openremoveDialog()">Remove</button>
+          </mat-menu>
+        </span>
+      </div>
+    </h2>
+    <div class="row gap-4 rounded-3">
+      <section
+        class="col-lg-3 col-md-4 col-sm-12 col-12 text-center rounded-3 p-0"
+      >
+        <img
+          class="project-img rounded-3 card-img-top bg-white"
+          src="https://img.freepik.com/free-vector/men-teamwork-with-gears-induatry-bulb-idea_24877-54770.jpg?w=740&t=st=1714375888~exp=1714376488~hmac=97ca0d93158e290c0a58545f9ff3dc070c24a524192d6926126551a870a036a0"
+          alt="..."
+        />
+      </section>
+      <section class="col-lg-8 col-md-7 col-sm-7 col-12 pt-2 p-0">
+        <div class="d-flex flex-column gap-2">
+          <p>
+            <span class="text-danger fs-4">{{ projectName }}</span> is a cloud
+            based software platform which connects Teams of Manufacturing
+            Businesses with its Customers and Business Associates, Simplifies
+            various business processes into a centralised business ecosystem,
+            and emphasises on insights to boost business at the same time.
+            Moreover, it is versatile, powerful, and has all the features
+            required to have a dynamic and productive approach towards
+            overseeing every aspect of business.
+          </p>
+          <h4 class="text-success fw-bold d-flex align-items-center">
+            Status <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ project.status }}</span>
+          </h4>
+          <h4 class="text-success fw-bold d-flex align-items-center">
+            Category <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ project.category }}</span>
+          </h4>
+          <h4 class="text-success fw-bold d-flex align-items-center">
+            Started <mat-icon>navigate_next</mat-icon>
+            <span class="text-secondary fw-bolder">{{ project.started }}</span>
+          </h4>
+          <h4 class="text-success fw-bold d-flex gap-3 align-items-center">
+            Social Media <mat-icon>navigate_next</mat-icon>
+            <span class="social-img p-1 bg-white"
+              ><img
+                class="bg-white img-fluid"
+                src="https://w7.pngwing.com/pngs/388/396/png-transparent-computer-icons-social-media-social-media-text-trademark-photography-thumbnail.png"
+                alt=""
+            /></span>
+            <span class="social-img bg-white"
+              ><img
+                class="img-fluid bg-white"
+                src="https://cdn3.iconfinder.com/data/icons/basicolor-reading-writing/24/077_twitter-512.png"
+                alt=""
+            /></span>
+            <span class="social-img p-1 bg-white"
+              ><img
+                class="img-fluid bg-white"
+                src="https://cdn-icons-png.flaticon.com/256/1384/1384060.png"
+                alt=""
+            /></span>
+            <span class="social-img p-1 bg-white"
+              ><img
+                class="img-fluid bg-white"
+                src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
+                alt=""
+            /></span>
+            <span class="social-img p-1 bg-white"
+              ><img
+                class="img-fluid bg-white"
+                src="https://www.facebook.com/images/fb_icon_325x325.png"
+                alt=""
+            /></span>
+          </h4>
+        </div>
+        <div
+          class="d-flex flex-column gap-2 col-lg-5 col-md-5 col-sm-12 col-12"
+        >
+          <h2 class="m-0 p-0 text-danger">Team</h2>
+          <div
+            class="d-flex align-items-center justify-content-between fw-bold"
+          >
+            <h3 class="text-dark p-0 m-0">Team Member {{ totalTeam }}</h3>
+            <!-- <span class="text-danger">View All</span> -->
+            <button
+              class="text-danger"
+              mat-button
+              (click)="openviewteamDialog()"
+            >
+              View All
+            </button>
+          </div>
+        </div>
+        <div
+          class="d-flex flex-column gap-2 col-lg-5 col-md-5 col-sm-12 col-12"
+        >
+          <h2 class="m-0 p-0 text-warning fw-bolder">Task</h2>
+          <div
+            class="d-flex align-items-center justify-content-between fw-bold"
+          >
+            <h3 class="text-dark p-0 m-0">Pending Tasks {{ totalTeam }}</h3>
+            <!-- <span class="text-danger">View All</span> -->
+            <button
+              class="text-warning"
+              mat-button
+              (click)="openviewteamDialog()"
+            >
+              View All
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

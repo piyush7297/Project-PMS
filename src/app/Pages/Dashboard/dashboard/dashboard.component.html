@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="container mt-4 px-4 pt-4">
+    <div class="d-flex align-items-center gap-2 pt-3">
+      <mat-icon>dashboard</mat-icon>
+      <h2 class="fs-2 text-dark m-0">Dashboard</h2>
+    </div>
+    <div class="row mt-4 gap-4 justify-content-around">
+      <a
+        class="text-decoration-none text-dark dashboard-card scaling-element bg-danger bg-opacity-25 d-flex rounded-3 py-4 text-center flex-column gap-1"
+        routerLink="/team/viewteam"
+      >
+        <span class="dashboard-icon">
+          <mat-icon class="">groups</mat-icon>
+        </span>
+        <h3 class="fw-bold fs-3 m-0">{{ teamLength }}</h3>
+        <p class="m-0">Team Members</p>
+      </a>
+      <a
+        class="text-decoration-none text-dark dashboard-card scaling-element bg-secondary bg-opacity-50 d-flex rounded-3 py-4 text-center flex-column gap-1"
+        routerLink="/project/viewproject"
+      >
+        <span>
+          <mat-icon>handyman</mat-icon>
+        </span>
+        <h3 class="fw-bold fs-3 m-0">{{ projectLength }}</h3>
+        <p class="m-0">Projects</p>
+      </a>
+      <a
+        class="text-decoration-none text-dark dashboard-card scaling-element bg-info bg-opacity-25 d-flex rounded-3 py-4 text-center flex-column gap-1"
+        routerLink="/viewtask"
+      >
+        <span>
+          <mat-icon>post_add</mat-icon>
+        </span>
+        <h3 class="fw-bold fs-3 m-0">{{ taskLength }}</h3>
+        <p class="m-0">Tasks</p>
+      </a>
+      <a
+        class="text-decoration-none text-dark dashboard-card scaling-element bg-success bg-opacity-75 text-white d-flex rounded-3 py-4 text-center flex-column gap-1"
+        routerLink="/viewtask"
+      >
+        <span>
+          <mat-icon>task</mat-icon>
+        </span>
+        <h3 class="fw-bold fs-3 m-0">{{ completedTask }}</h3>
+        <p class="m-0">Completed Tasks</p>
+      </a>
+      <a
+        class="text-decoration-none text-dark dashboard-card scaling-element bg-warning bg-opacity-75 d-flex rounded-3 py-4 text-center flex-column gap-1"
+        routerLink="/viewtask"
+      >
+        <span>
+          <mat-icon>pending_actions</mat-icon>
+        </span>
+        <h3 class="fw-bold fs-3 m-0">{{ pendingTask }}</h3>
+        <p class="m-0">Pending Tasks</p>
+      </a>
+    </div>
+  </div>
+</div>

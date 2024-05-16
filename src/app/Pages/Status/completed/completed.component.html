@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="container mt-5 pt-5">
+  <div class="row gy-4">
+    <div class="col-12">
+      <h2 class="text-success">Completed Projects</h2>
+    </div>
+    <div
+      class="col-lg-3 col-md-4 col-sm-6 col-12 hoverOncard"
+      *ngFor="let project of completeProjects"
+    >
+      <div
+        routerLink="/project/viewproject/{{ project.id }}"
+        class="card shadow-lg border-success border border-4 rounded-3 bg-dark text-white"
+      >
+        <img
+          src="https://img.freepik.com/free-vector/men-teamwork-with-gears-induatry-bulb-idea_24877-54770.jpg?w=740&t=st=1714375888~exp=1714376488~hmac=97ca0d93158e290c0a58545f9ff3dc070c24a524192d6926126551a870a036a0"
+          class="card-img-top bg-white img-fluid"
+          alt="..."
+        />
+        <div class="card-body">
+          <h3>Name : {{ project.name }}</h3>
+          <p>Started : {{ project.started }}</p>
+          <p class="">Category : {{ project.category }}</p>
+          <p class="">Status : {{ project.status }}</p>
+          <!-- <button mat-raised-button color="primary">Primary</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

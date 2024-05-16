@@ -1,0 +1,195 @@
+<app-header></app-header>
+<div
+  class="container-fluid pt-5 mt-5 pb-3 text-white border-top border-warning border-3 view-member-section"
+>
+  <div class="container">
+    <div class="row justify-content-between rounded-2">
+      <div
+        class="col-lg-3 col-md-4 col-sm-12 col-12 shadow-lg rounded-3 mb-4 pb-2"
+      >
+        <img
+          *ngIf="memberdata?.gender === 'Male'; else female"
+          src="https://img.freepik.com/free-vector/isolated-young-handsome-man-different-poses-white-background-illustration_632498-870.jpg?t=st=1714630244~exp=1714633844~hmac=69ee800251704acb8ec9fa58c40bee83f89bccb93b14969d059ef01feb18ca96&w=740"
+          class="w-100 rounded-3"
+          alt="..."
+        />
+        <ng-template #female>
+          <img
+            class="card-img-top w-100 rounded-4"
+            src="https://img.freepik.com/premium-vector/bossy-alpha-woman-ai-generated-image_362642-3359.jpg?w=740"
+            alt=""
+          />
+        </ng-template>
+        <div class="d-flex flex-column p-2 text-dark">
+          <h2 class="text-dark m-0">{{ memberdata?.name }}</h2>
+          <p class="p-0 text-secondary">{{ memberdata?.role }}</p>
+          <p class="text-danger gap-2 fw-bold d-flex align-items-center">
+            <mat-icon>call</mat-icon>
+            <span class="text-secondary fw-bolder">{{
+              memberdata?.phone
+            }}</span>
+          </p>
+          <p class="text-danger gap-2 fw-bold d-flex align-items-center">
+            <mat-icon>mail</mat-icon>
+            <span class="text-secondary fw-bolder">{{
+              memberdata?.email
+            }}</span>
+          </p>
+          <div class="d-flex gap-3 align-items-center text-danger">
+            <mat-icon>public</mat-icon>
+            <span class="social-img p-1 bg-white"
+              ><img
+                class="img-fluid bg-white"
+                src="https://w7.pngwing.com/pngs/388/396/png-transparent-computer-icons-social-media-social-media-text-trademark-photography-thumbnail.png"
+                alt=""
+            /></span>
+            <span class="social-img bg-white"
+              ><img
+                class="img-fluid bg-white"
+                src="https://cdn3.iconfinder.com/data/icons/basicolor-reading-writing/24/077_twitter-512.png"
+                alt=""
+            /></span>
+            <span class="social-img p-1 bg-white"
+              ><img
+                class="img-fluid bg-white"
+                src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
+                alt=""
+            /></span>
+            <span class="social-img p-1 bg-white"
+              ><img
+                class="img-fluid bg-white"
+                src="https://www.facebook.com/images/fb_icon_325x325.png"
+                alt=""
+            /></span>
+          </div>
+        </div>
+      </div>
+      <section class="col-lg-8 col-md-7 col-sm-12 col-12 pt-2 p-0 text-dark">
+        <div class="d-flex justify-content-between align-items-center pb-4">
+          <h2 class="fs-2 text-secondary m-0">#About {{ memberdata?.name }}</h2>
+          <span class="text-dark">
+            <button mat-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" class="bg-white">
+              <button mat-menu-item>Edit</button>
+              <button mat-menu-item>Pin</button>
+              <button
+                mat-menu-item
+                Delete_item="Team Member"
+                (click)="openremoveDialog()"
+              >
+                Remove
+              </button>
+            </mat-menu>
+          </span>
+        </div>
+        <p class="">
+          Experienced web developer proficient in front-end and back-end
+          technologies, including HTML, CSS, JavaScript, and various frameworks
+          such as React and Node.js. Skilled in designing responsive and
+          user-friendly interfaces, implementing features, and ensuring
+          cross-browser compatibility. Adept at troubleshooting and debugging to
+          deliver high-quality, performant web applications. Strong collaborator
+          with a commitment to staying updated on emerging technologies and best
+          practices.
+        </p>
+        <p class="text-secondary gap-2 fw-bold d-flex align-items-center pt-3">
+          <mat-icon>school</mat-icon>
+          <span class="text-secondary fw-bolder fs-3">Education</span>
+        </p>
+        <div
+          class="d-flex flex-lg-row flex-md-row flex-sm-column flex-column gap-5 justify-content-around py-3"
+        >
+          <div class="text-center text-success">
+            <mat-icon>apartment</mat-icon>
+            <p class="m-0">Education</p>
+            <p class="m-0 text-dark">School : Aditya Public School</p>
+            <p class="m-0 text-dark">College : Jiet Univercity</p>
+          </div>
+          <div class="text-center text-success">
+            <mat-icon>open_in_new</mat-icon>
+            <p class="m-0">Career Start</p>
+            <p class="m-0 text-dark">AJM Softwares</p>
+          </div>
+          <div class="text-center text-success">
+            <mat-icon>work</mat-icon>
+            <p class="m-0">Experience</p>
+            <p class="m-0 text-dark">About 4+ years of Experience</p>
+          </div>
+        </div>
+        <h4 class="text-danger fw-bold d-flex align-items-center pt-3">
+          Gender <mat-icon>navigate_next</mat-icon>
+          <span class="text-secondary fw-bolder">{{ memberdata?.gender }}</span>
+        </h4>
+        <h4 class="text-danger fw-bold d-flex align-items-center">
+          Profession <mat-icon>navigate_next</mat-icon>
+          <span class="text-secondary fw-bolder">{{
+            memberdata?.profession
+          }}</span>
+        </h4>
+        <h4 class="text-danger fw-bold d-flex align-items-center">
+          Project <mat-icon>navigate_next</mat-icon>
+          <span class="text-secondary fw-bolder">{{
+            memberdata?.project
+          }}</span>
+        </h4>
+        <h4 class="text-danger fw-bold d-flex align-items-center">
+          Salary <mat-icon>navigate_next</mat-icon>
+          <span class="text-secondary fw-bolder">{{ memberdata?.salary }}</span>
+        </h4>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- <div
+            class="col-lg-6 col-md-10 col-sm-12 col-12 p-2 pt-3 d-flex flex-column gap-2"
+          >
+            <h3 class="text-dark fw-bold p-0 m-0">Member Settings</h3>
+            <div
+              class="d-flex align-items-center fw-bold justify-content-between"
+            >
+              <p class="text-dark">Pin This Member To Top 3 Emploee</p>
+              <button
+                class="col-4 bg-warning bg-opacity-75 text-dark fw-bold rounded-2"
+                routerLink="/sa"
+                mat-icon-button
+                color=""
+                aria-label="Example icon button with a home icon"
+              >
+                <mat-icon>star</mat-icon>
+              </button>
+            </div>
+            <div
+              class="d-flex align-items-center fw-bold justify-content-between"
+            >
+              <p class="text-dark">Update Member Info</p>
+              <button
+                class="col-4 bg-info bg-opacity-75 text-dark fw-bold rounded-2"
+                (click)="updateMember()"
+                mat-icon-button
+                color=""
+                aria-label="Example icon button with a home icon"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+            </div>
+            <div
+              class="d-flex align-items-center fw-bold justify-content-between"
+            >
+              <p class="text-dark">Remove Member From Team</p>
+              <button
+                class="col-4 bg-danger text-white fw-bold rounded-2"
+                (click)="openDialog()"
+                mat-icon-button
+                color=""
+                aria-label="Example icon button with a home icon"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button class="col-4 bg-danger  text-white fw-bold rounded-2"  (click)="removeMember()" mat-icon-button color="" aria-label="Example icon button with a home icon">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div> -->

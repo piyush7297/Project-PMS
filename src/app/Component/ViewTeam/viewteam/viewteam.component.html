@@ -1,0 +1,139 @@
+<app-header></app-header>
+<div class="container-fluid mt-5 pt-3 pb-4 viewteam-section">
+  <div class="container pt-2">
+    <div class="row gy-2 pb-5">
+      <header
+        class="row align-items-center mb-2 gy-2 ms-1 pe-lg-0 pe-md-0 pe-sm-1 pe-1 pt-2 gap-lg-0 gap-md-0 gap-sm-2 gap-2"
+      >
+        <app-search
+          class="col-lg-4 col-md-5 col-sm-12 col-12 p-0 m-0"
+          placeHoldertext="Search Team Members..."
+          (searchTextChanged)="onSearchTextChanged($event)"
+        ></app-search>
+        <section
+          class="col-lg-8 col-md-7 col-sm-12 col-12 d-flex flex-lg-row flex-md-row flex-sm-column flex-column justify-content-between align-items-center m-0 p-lg-2 p-md-2 p-sm-0 p-0 gap-2"
+        >
+          <form
+            class="d-flex col-lg-6 col-md-6 col-sm-12 col-12 gap-2 justify-content-lg-around justify-content-md-start justify-content-sm-between justify-content-between"
+            [formGroup]="teamForm"
+          >
+            <div class="col-lg-5 col-md-6 col-sm-5 col-5">
+              <mat-form-field
+                appearance="fill"
+                class="w-100 border-1 border-dark team-bg text-white rounded-3"
+              >
+                <mat-label class="text-white">Project</mat-label>
+                <mat-select formControlName="Project">
+                  <mat-option value="All" selected>All</mat-option>
+                  <mat-option
+                    *ngFor="let project of projects"
+                    value="{{ project.name }}"
+                    class=""
+                    >{{ project.name }}</mat-option
+                  >
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-5 col-5">
+              <mat-form-field
+                appearance="fill"
+                class="w-100 border-1 border-dark team-bg text-white rounded-3"
+              >
+                <mat-label class="text-white">Profession</mat-label>
+                <mat-select formControlName="Profession">
+                  <mat-option value="All" selected>All Team</mat-option>
+                  <mat-option value="Software Engineer"
+                    >Software Engineer</mat-option
+                  >
+                  <mat-option value="Digital Marketing"
+                    >Digital Marketing</mat-option
+                  >
+                  <mat-option value="IT & Sales">IT & Sales</mat-option>
+                  <mat-option value="Cloud Engineer">Cloud Engineer</mat-option>
+                  <mat-option value="UI designer">UI designer</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </form>
+          <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+            <button
+              mat-raised-button
+              class="bg-warning py-1 d-flex align-items-center fs-6 w-100 justify-content-center"
+              (click)="openDialog()"
+            >
+              <mat-icon>person_add</mat-icon> Add New Member
+            </button>
+          </div>
+        </section>
+      </header>
+      <div class="d-flex justify-content-between align-items-center">
+        <h1 class="text-secondary">OUR Team</h1>
+        <h2 class="text-dark d-flex align-items-center">
+          Team <span class="material-icons">navigate_next</span>
+          <span class="text-danger"
+            >{{ filteredTeam.length }} <span class="text-dark">Members</span>
+          </span>
+        </h2>
+      </div>
+      <p class="text-secondary">
+        Our Office Project Team is a dynamic group dedicated to driving
+        innovation, efficiency, and excellence in all office-related projects.
+        Comprised of talented individuals from diverse backgrounds, our team
+        collaborates seamlessly to tackle challenges and deliver exceptional
+        results.
+      </p>
+      <ng-container *ngIf="filteredTeam.length > 0; else noData">
+        <ng-container *ngFor="let team of filteredTeam">
+          <div
+            class="col-lg-2 col-md-3 col-sm-4 col-6 gy-3 hoverOncard scaling-element"
+            *ngIf="
+              searchText === '' || team.name.toLowerCase().includes(searchText)
+            "
+          >
+            <div
+              routerLink="/team/viewmember/{{ team.id }}"
+              class="card border-0 rounded-3 text-dark"
+            >
+              <div *ngIf="team.gender === 'Male'; else female">
+                <img
+                  class="card-img-top shadow rounded-3"
+                  src="https://img.freepik.com/premium-vector/young-handsome-man-illustration_632498-23.jpg?w=740"
+                  alt=""
+                />
+              </div>
+              <ng-template #female>
+                <img
+                  class="shadow"
+                  src="https://img.freepik.com/premium-vector/vector-flat-icon-confident-woman-stylish-suit-with-vibrant-red-tie_176841-6900.jpg?w=740"
+                  alt=""
+                />
+              </ng-template>
+              <div class="p-2  d-flex flex-column">
+                <h3 class="text-center m-0 p-0 rounded-3 fw-bold">
+                  {{ team.name }}
+                </h3>
+                <h5 class="text-center m-0 p-0 fw-bold">{{ team.role }}</h5>
+                <!-- <p class="">Email : {{team.email}}</p>
+                  <p class="">Phone : {{team.phone}}</p> -->
+                <!-- <button mat-raised-button color="primary">Primary</button> -->
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </ng-container>
+      <ng-template #noData>
+        <h2 class="text-danger">No Team-Member Found !</h2>
+      </ng-template>
+    </div>
+    <footer class="fixed-bottom">
+      <mat-paginator
+        [length]="allTeam.length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        aria-label="Select page"
+        (page)="onPageChange($event)"
+      >
+      </mat-paginator>
+    </footer>
+  </div>
+</div>
