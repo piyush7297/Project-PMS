@@ -20,9 +20,9 @@
             <div class="col-lg-5 col-md-5 col-sm-5 col-5">
               <mat-form-field
                 appearance="fill"
-                class="border-1 border-dark bg-warning text-dark rounded-3 w-100"
+                class="border-1 border-dark rounded-3 w-100 bg-dark bg-opacity-10"
               >
-                <mat-label class="text-dark">Status</mat-label>
+                <mat-label class="">Status</mat-label>
                 <mat-select formControlName="status">
                   <mat-option value="" selected>All</mat-option>
                   <mat-option value="Pending">Pending</mat-option>
@@ -33,9 +33,9 @@
             <div class="col-lg-5 col-md-6 col-sm-5 col-5">
               <mat-form-field
                 appearance="fill"
-                class="border-1 border-dark bg-warning text-dark rounded-3 w-100"
+                class="border-1 border-dark rounded-3 w-100 bg-dark bg-opacity-10"
               >
-                <mat-label class="text-dark">Project</mat-label>
+                <mat-label class="">Project</mat-label>
                 <mat-select formControlName="project">
                   <mat-option value="" selected>All</mat-option>
                   <mat-option
@@ -53,7 +53,7 @@
               class="bg-dark py-1 text-white d-flex align-items-center fs-6 w-100 justify-content-center"
               (click)="openAddtaskDialog()"
             >
-              <mat-icon>post_add</mat-icon> Add Task
+              <mat-icon>post_add</mat-icon> Create Task
             </button>
           </div>
         </section>
@@ -81,9 +81,9 @@
               searchText === '' || task.title.toLowerCase().includes(searchText)
             "
           >
-            <div
+            <a
               routerLink="/viewtask/{{ task.id }}"
-              class="card shadow bg-white position-relative h-100 p-2"
+              class="card shadow bg-white position-relative h-100 p-2 text-decoration-none"
             >
               <!-- <div class="position-relative ">
               src="https://img.freepik.com/premium-vector/tablet-folder-with-pencil-flat-design-vector-illustration_193165-394.jpg?w=1380"
@@ -118,7 +118,7 @@
                   <p class="">Start-Date : {{ task.startdate }}</p>
                   <p class="">End-Date : {{ task.enddate }}</p>
                 </div> -->
-            </div>
+            </a>
           </div>
         </ng-container>
       </ng-container>

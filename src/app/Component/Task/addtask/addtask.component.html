@@ -4,7 +4,7 @@
       <h2
         class="text-dark fw-bold rounded-3 p-0 m-0 d-flex align-items-center gap-2"
       >
-        <mat-icon>post_add</mat-icon> Add Task
+        <mat-icon>post_add</mat-icon> Create Task
       </h2>
       <section class="d-flex justify-content-between">
         <section class="col-lg-3 col-md-4 col-sm-4 col-1">
@@ -110,16 +110,20 @@
               </div>
             </mat-form-field>
        <div>
-        <ng-container *ngIf="taskTeam.length > 0">
+        <ng-container *ngIf="taskTeamLength > 0">
           <div class="d-flex justify-content-between px-2">
-            <p>Selected Team</p><p>{{taskTeamLength}}</p>
+            <p >Selected Team</p><p class="bg-secondary text-white px-2 rounded-3">{{taskTeamLength}}</p>
           </div>
-          <div class="d-flex mb-1 task-team-container">
-            <figure class="text-decoration-none" *ngFor="let team of taskTeam">
-                <img class="task-team-img" src="https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg?t=st=1715754246~exp=1715757846~hmac=00ab9ec1a6faff3ccd50c40ace87992fc2ad3c16286a6f19ce8fb41705caa1ec&w=740" alt="">
+          <div class="d-flex  task-team-container profiles p-1 mb-1">
+            <figure class="text-decoration-none profiles__group m-0" *ngFor="let team of taskTeam" [matTooltip]="team.name">
+                <img class="task-team-img"  src="https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg?t=st=1715754246~exp=1715757846~hmac=00ab9ec1a6faff3ccd50c40ace87992fc2ad3c16286a6f19ce8fb41705caa1ec&w=740" alt="">
                 <!-- <figcaption class="fig-caption p-0 m-0">
                   {{team.name}}
                 </figcaption> -->
+                <!-- <p class="px-2 py-1 m-0">{{team.name}}</p> -->
+                <span class="close-btn-parent" role="button" (click)="removeMember(team.id)">
+                  <mat-icon class="close-button">close</mat-icon>
+                </span>
             </figure>
           </div>
         </ng-container>
@@ -138,7 +142,7 @@
           class="text-danger d-flex align-items-center bg-secondary bg-opacity-10 w-100"
           type="button"
           mat-button
-          (click)="openviewteamDialog()"
+          (click)="openfilteredteamDialog()"
         >
           <mat-icon>group_add</mat-icon> Assign More Team
         </button>

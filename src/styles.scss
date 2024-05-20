@@ -72,13 +72,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; padding: 0;
   border-radius: 20px !important;
   max-width: 100% !important;
 }
+
+
 .activeroute{
   // color: black !important;
   // background-color: #ccc;
-  color: gray;
+  color: #F9C10A;
 }
 .hover-item :hover{
-  color: gray !important;
+  color: rgb(251, 224, 46) !important;
 }
 // .mat-form-field-wrapper{
 //   padding: 0px !important;

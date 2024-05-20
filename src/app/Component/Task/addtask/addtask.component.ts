@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  , OnChanges} from '@angular/core';
 import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { ProjectService } from 'src/app/Services/Project/project.service';
 import { FormGroup, FormControl, FormControlName } from '@angular/forms';
@@ -17,14 +17,14 @@ export class AddtaskComponent implements OnInit {
   projects: any;
   projectName : string = ''
   tasks: any[] = [];
-  team: any;
+  team: any[] = [];
   taskTeam : any[] = [];
   taskTeamLength : number = 0;
+  filterTeam : any[] = []
   constructor(private fb: FormBuilder, private projectService: ProjectService, private taskService: TaskService, private teamService: TeamService, private dialog: MatDialog) {
     this.taskForm()
   }
   public taskform: FormGroup = new FormGroup({})
-
   ngOnInit(): void {
     this.taskForm()
     this.getProjects()
@@ -69,8 +69,22 @@ export class AddtaskComponent implements OnInit {
     dialogRef.afterClosed().subscribe((data :any) => {
       console.log(data);
       this.taskTeam = data
-      this.taskTeamLength = data.length
+      this.taskTeamLength = this.taskTeam.length
       this.taskform.get('taskteam')?.setValue(this.taskTeam)
+      this.getfilterTeam()
+    });
+  }
+  openfilteredteamDialog() {
+    const dialogRef = this.dialog.open(TaskteammodelComponent, {
+      data: this.filterTeam
+    });
+
+    dialogRef.afterClosed().subscribe((data :any) => {
+      console.log(data);
+      // this.taskTeam = [...this.taskTeam, ...data]
+      this.taskTeam.push(...data)
+      this. getfilterTeam()
+      this.taskTeamLength = this.taskTeam.length
     });
   }
   addTask() {
@@ -80,10 +94,6 @@ export class AddtaskComponent implements OnInit {
       this.taskService.setTasks(this.taskform.value)
       this.taskform.reset()
       this.taskTeam = []
-      // const taskTeamArray = this.taskform.get('taskTeamMembers') as FormArray
-      // taskTeamArray.push(this.taskTeam)
-      // console.log(taskTeamArray);
-      // console.log(this.taskTeam);
     }
     else{
       this.taskform.markAllAsTouched()
@@ -103,5 +113,15 @@ export class AddtaskComponent implements OnInit {
     this.teamService.getTeam().subscribe((res: any) => {
       this.team = res
     })
+  }
+  getfilterTeam(){
+    const TaskMemberId = this.taskTeam.map(a => a.id)
+    console.log(this.taskTeam);
+    this.filterTeam = this.team.filter(a => !TaskMemberId.includes(a.id))
+    console.log('filteredTaskTeam' , this.filterTeam);
+    console.log(TaskMemberId);
+  }
+  removeMember(MemberId : string) {
+   this.taskTeam =  this.taskTeam.filter( team => team.id !== MemberId)
   }
 }

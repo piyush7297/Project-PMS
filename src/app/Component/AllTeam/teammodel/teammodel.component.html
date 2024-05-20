@@ -1,32 +1,39 @@
 <div class="container">
   <h2 mat-dialog-title class="">Project Team</h2>
   <mat-dialog-content class="mat-typography">
-    <div class="col-12 table-section">
-      <table class="w-100">
-        <thead
-          class="text-center border-2 border-secondary rounded-3 bg-dark fw-bold text-white"
-        >
-          <th></th>
-          <th class="p-2 px-4 ">Name</th>
-          <th class="p-2 px-4 ">Role</th>
-          <th class="p-2 px-4 ">Email</th>
-          <th class="p-2 px-4 ">Phone</th>
-          <th class="p-2 px-4 ">Action</th>
-        </thead>
-        <tbody
-          class="text-center text-dark fw-bold  bg-white bg-opacity-50"
-        >
-          <tr *ngFor="let member of team" class="border-bottom border-2 border-secondary">
-            <td class="col-1 "><img class="w-100 img-fluid " src="https://img.freepik.com/free-vector/man-profile-account-picture_24908-81754.jpg?t=st=1714564795~exp=1714568395~hmac=b8f35a797aa8b55dd6fab6c4f6d019f37dd8aad10651e0fb79b231a72d14050b&w=740" alt=""></td>
-            <td class="py-2 text-secondary ">{{ member.name }}</td>
-            <td class="">{{member.role}}</td>
-            <td class="">{{member.email}}</td>
-            <td class="">{{member.phone}}</td>
-            <td class="text-danger mat-button" role="button" >Remove</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <ng-container *ngIf="team.length>0; else noteam">
+      <div class="col-12 table-section">
+        <table class="w-100">
+          <thead
+            class="text-center border-2 border-secondary rounded-3 bg-dark fw-bold text-white"
+          >
+            <th></th>
+            <th class="p-2 px-4 ">Name</th>
+            <th class="p-2 px-4 ">Role</th>
+            <th class="p-2 px-4 ">Email</th>
+            <th class="p-2 px-4 ">Phone</th>
+            <th class="p-2 px-4 ">Action</th>
+          </thead>
+          <tbody
+            class="text-center text-dark fw-bold  bg-white bg-opacity-50"
+          >
+            <tr *ngFor="let member of team" class="border-bottom border-2 border-secondary">
+              <td class="col-1 "><img class="w-100 img-fluid " src="https://img.freepik.com/free-vector/man-profile-account-picture_24908-81754.jpg?t=st=1714564795~exp=1714568395~hmac=b8f35a797aa8b55dd6fab6c4f6d019f37dd8aad10651e0fb79b231a72d14050b&w=740" alt=""></td>
+              <td class="py-2 text-secondary ">{{ member.name }}</td>
+              <td class="">{{member.role}}</td>
+              <td class="">{{member.email}}</td>
+              <td class="">{{member.phone}}</td>
+              <td class="text-danger mat-button" (click)="removeMember(member.id)" role="button" >Remove</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
+    <ng-template #noteam>
+      <h3 class="text-danger">
+      No team member found!
+      </h3>
+    </ng-template>
   </mat-dialog-content>
   <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Back</button>

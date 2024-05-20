@@ -41,6 +41,15 @@ export class ViewmemberComponent implements OnInit {
     });
   }
   openremoveDialog(): void {
-    this.dialog.open(DeletecomponentComponent);
+    const dialogRef = this.dialog.open(DeletecomponentComponent, {
+      data : this.MemberId
+    });
+    // dialogRef.afterClosed(DeletecomponentComponent);
+    // .afterClosed().subscribe((data :any) => {
+    //   console.log(data);
+    //   this.taskTeam = data
+    //   this.taskTeamLength = data.length
+    //   this.taskform.get('taskteam')?.setValue(this.taskTeam)
+    // });
   }
-}
+  }

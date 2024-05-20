@@ -22,7 +22,7 @@ export class TaskdetailComponent implements OnInit {
   team:any[]=[]
   taskTeam : any[] = [];
   totalTeam : number = 0;
-
+  filterTeam :any[] = []
   ngOnInit(): void {
     this.gettaskDetail()
   }
@@ -37,11 +37,11 @@ export class TaskdetailComponent implements OnInit {
   }
   openfilterteamDialog() {
     const dialogRef = this.dialog.open(TaskteammodelComponent , {
-      data : this.team
+      data : this.filterTeam
     });
-
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      console.log(result);
+      this.taskTeam.push(...result)
     });
   }
   gettaskDetail(){
@@ -55,26 +55,22 @@ export class TaskdetailComponent implements OnInit {
   getTeam(){
     this.teamService.getTeam().subscribe((res:any)=>{
       this.team = res
-      // this.filterTeam()
+      this.getTaskTeam()
     })
-    this.getTaskTeam()
   }
-
   getTaskTeam(){
     this.taskService.getSingleTask(this.TaskId).subscribe((res:any)=>{
       this.taskTeam = res.taskteam
       console.log(this.taskTeam);
+      this.getfilterTeam()
     })
   }
-  // }
-  // this.filteredtasks = this.tasks.filter(a => a.status.toLowerCase() === this.status.toLowerCase())
-
-  // filterTeam(){
-  //   this.taskTeam = this.team.filter( a => a.task.toLowerCase() === this.taskName.toLowerCase() )
-  //   console.log(this.team);
-  //   console.log(this.taskTeam);
-  //   this.totalTeam = this.taskTeam.length
-  // }
+  getfilterTeam(){
+    const TaskMemberId = this.taskTeam.map(a => a.id)
+    this.filterTeam = this.team.filter(a => !TaskMemberId.includes(a.id))
+    console.log('filteredTaskTeam' , this.filterTeam);
+    console.log(TaskMemberId);
+  }
   openremoveDialog(): void {
     this.dialog.open(DeletecomponentComponent);
   }

@@ -7,7 +7,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./teammodel.component.scss']
 })
 export class TeammodelComponent implements OnInit {
-  team : any;
+  team : any[] = [];
   constructor( @Inject(MAT_DIALOG_DATA) public data: any,) { }
 
   ngOnInit(): void {
@@ -15,4 +15,7 @@ export class TeammodelComponent implements OnInit {
     console.log(this.team);
   }
 
+  removeMember(MermberId : string){
+    this.team = this.team.filter(a => a.id != MermberId)
+  }
 }

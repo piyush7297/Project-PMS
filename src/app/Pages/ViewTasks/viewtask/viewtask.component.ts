@@ -29,7 +29,6 @@ export class ViewtaskComponent implements OnInit {
 
   taskForm() {
     this.taskform = this.fb.group({
-      Project: new FormControl(''),
       status: new FormControl(''),
       project: new FormControl(''),
     })

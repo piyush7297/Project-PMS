@@ -1,5 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ViewmemberComponent } from 'src/app/Pages/ViewMember/viewmember/viewmember.component';
+import { TeamService } from 'src/app/Services/Team/team.service';
 
 @Component({
   selector: 'app-deletecomponent',
@@ -8,11 +11,18 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class DeletecomponentComponent implements OnInit {
   @Input () delete_item : string = ''
-  constructor(public dialogRef: MatDialogRef<DeletecomponentComponent>) { }
-
+  constructor( @Inject(MAT_DIALOG_DATA) public data: any ,  public dialogRef: MatDialogRef<ViewmemberComponent> , private teamservice : TeamService , public router : Router ) { }
+  MemberId : string = ''
   ngOnInit(): void {
-
+    this.MemberId = this.data
+    console.log(this.MemberId);
     // this.dialogRef.close(true)
   }
-
+  removeMember(MemberId : string) {
+    this.teamservice.removeMember(MemberId).subscribe(() => {
+      this.router.navigate(['/team/viewteam']);
+    }, error => {
+      console.error('Error removing member:', error);
+    });
+  }
 }

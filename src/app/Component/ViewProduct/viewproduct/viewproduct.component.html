@@ -20,9 +20,9 @@
             <div class="col-lg-5 col-md-5 col-sm-5 col-5">
               <mat-form-field
                 appearance="fill"
-                class="border-1 border-dark project-bg text-white rounded-3 w-100"
+                class="border-1 border-dark text-dark rounded-3 w-100 bg-dark bg-opacity-10"
               >
-                <mat-label class="text-white">Status</mat-label>
+                <mat-label class="">Status</mat-label>
                 <mat-select formControlName="status">
                   <mat-option value="All" selected>All</mat-option>
                   <mat-option value="Pending">Pending</mat-option>
@@ -33,9 +33,9 @@
             <div class="col-lg-5 col-md-6 col-sm-5 col-5">
               <mat-form-field
                 appearance="fill"
-                class="border-1 border-dark project-bg text-white rounded-3 w-100"
+                class="border-1 border-darkc rounded-3 w-100 bg-dark bg-opacity-10"
               >
-                <mat-label class="text-white">Category</mat-label>
+                <mat-label class="">Category</mat-label>
                 <mat-select formControlName="category">
                   <mat-option value="All" selected>All</mat-option>
                   <mat-option value="ECOM">ECOM</mat-option>
@@ -48,7 +48,7 @@
           <div class="col-lg-4 col-md-6 col-sm-12 col-12">
             <button
               mat-raised-button
-              class="bg-warning py-1 d-flex align-items-center fs-6 w-100 justify-content-center"
+              class="bg-dark text-white py-1 d-flex align-items-center fs-6 w-100 justify-content-center"
               (click)="openProjectDialog()"
             >
               <mat-icon>add_to_queue</mat-icon> Add New Project
@@ -79,9 +79,9 @@
             searchText === '' || project.name.toLowerCase().includes(searchText)
           "
         >
-          <div
+          <a
             routerLink="/project/viewproject/{{ project.id }}"
-            class="card shadow-lg border border-2 border-warning rounded-3 text-white bg-dark"
+            class="card shadow-lg border border-2 border-warning rounded-3 text-white bg-dark text-decoration-none"
           >
             <div>
               <div class="position-relative">
@@ -111,7 +111,7 @@
               <!-- <span class="position-absolute bottom-0 end-0 text-dark px-1 fw-bold m-0 pb-1">Category : {{project.category}}</span> -->
               <p class="">Category : {{ project.category }}</p>
             </div>
-          </div>
+          </a>
         </div>
       </ng-container>
      </ng-container>

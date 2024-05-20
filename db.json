@@ -311,6 +311,42 @@
       "profession": "UI designer",
       "salary": "5 LPA to 7 LPA",
       "project": "AJM Official"
+    },
+    {
+      "id": "d942",
+      "name": "Testing",
+      "email": "testing@gmail.com",
+      "phone": "4983985837",
+      "role": "Tester",
+      "address": "",
+      "gender": "Male",
+      "profession": "Digital Marketing",
+      "salary": "3 LPA to 5 LPA",
+      "project": "AJM Official"
+    },
+    {
+      "id": "c8b0",
+      "name": "Testing",
+      "email": "Testing@gmail.com",
+      "phone": "0854689745",
+      "role": "Testing",
+      "address": "",
+      "gender": "Male",
+      "profession": "Digital Marketing",
+      "salary": null,
+      "project": "AJM Official"
+    },
+    {
+      "id": "fd14",
+      "name": "Artee Prajapati",
+      "email": "artee@gmail.com",
+      "phone": "9848673903",
+      "role": "Tester",
+      "address": "Unknown , Jodhpur",
+      "gender": "Female",
+      "profession": "Software Engineer",
+      "salary": "",
+      "project": "OrderAxe"
     }
   ],
   "projects": [
@@ -555,6 +591,41 @@
           "profession": "Software Engineer",
           "salary": "Below 3 LPA",
           "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "b7f9",
+      "title": "Make Login API ",
+      "task": "Make a login API for OrderAxe",
+      "status": "Pending",
+      "startdate": "2024-05-19T18:30:00.000Z",
+      "enddate": "2024-05-20T18:30:00.000Z",
+      "project": "OrderAxe",
+      "taskteam": [
+        {
+          "id": "8d05",
+          "name": "Khushal Soni",
+          "email": "khushalsoni@gmail.com",
+          "phone": "9827479202",
+          "role": "Web Developer",
+          "address": "Sojati Gate",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Above 10 LPA",
+          "project": "OrderAxe"
+        },
+        {
+          "id": "f81a",
+          "name": "Siddharth Sharma",
+          "email": "sid123@gmail.com",
+          "phone": "8398283298",
+          "role": "Backend Developer",
+          "address": "Sardarpura , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "5 LPA to 7 LPA",
+          "project": "OrderAxe"
         }
       ]
     }

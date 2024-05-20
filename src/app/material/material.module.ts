@@ -11,6 +11,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { DatePipe } from '@angular/common';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 const MaterialComponents : any[] = [
   MatButtonModule,
@@ -23,7 +24,8 @@ const MaterialComponents : any[] = [
   MatNativeDateModule,
   MatInputModule,
   MatSelectModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatTooltipModule
 ]
 @NgModule({
   imports: [

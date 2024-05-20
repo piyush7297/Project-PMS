@@ -4,7 +4,7 @@
     <h2 class="text-danger heading">
       <div class="d-flex justify-content-between align-items-center">
         <h2 class="fs-2 text-dark m-0 tex">
-          {{taskName}}
+          {{ taskName }}
         </h2>
         <span class="text-dark">
           <button mat-button [matMenuTriggerFor]="menu">
@@ -29,27 +29,27 @@
       </section>
       <section class="col-lg-8 col-md-7 col-sm-12 col-12 pt-2 p-0">
         <div class="d-flex flex-column gap-2">
-          <h4 class=" fw-bold d-flex align-items-center">
+          <h4 class="fw-bold d-flex align-items-center">
             Description <mat-icon>navigate_next</mat-icon>
             <span class="text-secondary fw-bolder">{{ task.task }}</span>
           </h4>
-          <h4 class=" fw-bold d-flex align-items-center">
+          <h4 class="fw-bold d-flex align-items-center">
             Status <mat-icon>navigate_next</mat-icon>
             <span class="text-secondary fw-bolder">{{ task.status }}</span>
           </h4>
-          <h4 class=" fw-bold d-flex align-items-center">
+          <h4 class="fw-bold d-flex align-items-center">
             Project <mat-icon>navigate_next</mat-icon>
             <span class="text-secondary fw-bolder">{{ task.project }}</span>
           </h4>
-          <h4 class=" fw-bold d-flex align-items-center">
+          <h4 class="fw-bold d-flex align-items-center">
             Start-Date <mat-icon>navigate_next</mat-icon>
             <span class="text-secondary fw-bolder">{{ task.startdate }}</span>
           </h4>
-          <h4 class=" fw-bold d-flex align-items-center">
+          <h4 class="fw-bold d-flex align-items-center">
             End-Date <mat-icon>navigate_next</mat-icon>
             <span class="text-secondary fw-bolder">{{ task.enddate }}</span>
           </h4>
-          <h4 class=" fw-bold d-flex align-items-center">
+          <h4 class="fw-bold d-flex align-items-center">
             Assigned Team <mat-icon>navigate_next</mat-icon>
             <span class="text-secondary fw-bolder">{{ taskTeam.length }}</span>
           </h4>
@@ -57,22 +57,22 @@
         <div
           class="d-flex flex-column gap-2 col-lg-5 col-md-5 col-sm-12 col-12"
         >
-        <div class="d-flex justify-content-between">
-          <button
+          <div class="d-flex justify-content-between">
+            <button
               class="text-secondary d-flex align-items-center border"
               mat-button
               (click)="openviewteamDialog()"
             >
-             View Task Team
+              View Task Team
             </button>
             <button
-            class="text-success d-flex align-items-center border"
-            mat-button
-            (click)="openfilterteamDialog()"
-          >
-            <mat-icon>group_add</mat-icon> Assign more Team
-          </button>
-        </div>
+              class="text-success d-flex align-items-center border"
+              mat-button
+              (click)="openfilterteamDialog()"
+            >
+              <mat-icon>group_add</mat-icon> Assign more Team
+            </button>
+          </div>
         </div>
         <!-- <div
           class="d-flex flex-column gap-2 col-lg-5 col-md-5 col-sm-12 col-12"

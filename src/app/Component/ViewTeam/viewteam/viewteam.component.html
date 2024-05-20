@@ -20,9 +20,9 @@
             <div class="col-lg-5 col-md-6 col-sm-5 col-5">
               <mat-form-field
                 appearance="fill"
-                class="w-100 border-1 border-dark team-bg text-white rounded-3"
+                class="w-100 border-1 border-dark  rounded-3 bg-dark bg-opacity-10"
               >
-                <mat-label class="text-white">Project</mat-label>
+                <mat-label class="">Project</mat-label>
                 <mat-select formControlName="Project">
                   <mat-option value="All" selected>All</mat-option>
                   <mat-option
@@ -37,9 +37,9 @@
             <div class="col-lg-5 col-md-6 col-sm-5 col-5">
               <mat-form-field
                 appearance="fill"
-                class="w-100 border-1 border-dark team-bg text-white rounded-3"
+                class="w-100 border-1 border-dark rounded-3 bg-dark bg-opacity-10"
               >
-                <mat-label class="text-white">Profession</mat-label>
+                <mat-label class="">Profession</mat-label>
                 <mat-select formControlName="Profession">
                   <mat-option value="All" selected>All Team</mat-option>
                   <mat-option value="Software Engineer"
@@ -58,7 +58,7 @@
           <div class="col-lg-4 col-md-6 col-sm-12 col-12">
             <button
               mat-raised-button
-              class="bg-warning py-1 d-flex align-items-center fs-6 w-100 justify-content-center"
+              class="bg-dark text-white py-1 d-flex align-items-center fs-6 w-100 justify-content-center"
               (click)="openDialog()"
             >
               <mat-icon>person_add</mat-icon> Add New Member
@@ -90,9 +90,11 @@
               searchText === '' || team.name.toLowerCase().includes(searchText)
             "
           >
-            <div
+          <div>
+          </div>
+            <a
               routerLink="/team/viewmember/{{ team.id }}"
-              class="card border-0 rounded-3 text-dark"
+              class="card border-0 rounded-3 text-dark text-decoration-none"
             >
               <div *ngIf="team.gender === 'Male'; else female">
                 <img
@@ -117,7 +119,7 @@
                   <p class="">Phone : {{team.phone}}</p> -->
                 <!-- <button mat-raised-button color="primary">Primary</button> -->
               </div>
-            </div>
+            </a>
           </div>
         </ng-container>
       </ng-container>

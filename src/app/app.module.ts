@@ -31,6 +31,7 @@ import { DashboardComponent } from './Pages/Dashboard/dashboard/dashboard.compon
 import { TaskdetailComponent } from './Pages/TaskDetail/taskdetail/taskdetail.component';
 import { ProfileComponent } from './Pages/Profile/profile/profile.component';
 import { TaskteammodelComponent } from './Component/TaskTeam/taskteammodel/taskteammodel.component';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,7 @@ import { TaskteammodelComponent } from './Component/TaskTeam/taskteammodel/taskt
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [
   ],
