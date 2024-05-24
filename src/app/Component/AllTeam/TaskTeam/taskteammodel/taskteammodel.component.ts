@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { AddteamComponent } from '../../Addteam/addteam/addteam.component';
+import { AddteamComponent } from '../../../Dialogs/Addteam/addteam/addteam.component';
 
 @Component({
   selector: 'app-taskteammodel',
@@ -27,18 +27,12 @@ export class TaskteammodelComponent implements OnInit {
     if(event.checked === true){
       this.taskTeam.push(member)
       this.taskTeamLength = this.taskTeam.length
-      // console.log('Launching Team ', member );
-      // console.log(this.taskTeam);
     }
     else{
       this.taskTeam = this.taskTeam.filter(a => a.id !== member.id)
-      console.log(this.taskTeam);
-      // this.taskTeam = this.taskTeam.filter
-      console.log('Crashing Team');
     }
   }
   addTeam(){
     this.closeDialog(this.taskTeam )
-    console.log(this.taskTeam);
   }
 }

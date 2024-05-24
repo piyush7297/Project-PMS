@@ -12,15 +12,16 @@ import { TeamService } from 'src/app/Services/Team/team.service';
 export class DeletecomponentComponent implements OnInit {
   @Input () delete_item : string = ''
   constructor( @Inject(MAT_DIALOG_DATA) public data: any ,  public dialogRef: MatDialogRef<ViewmemberComponent> , private teamservice : TeamService , public router : Router ) { }
-  MemberId : string = ''
+  MemberId : string = '';
+  Content : string = '';
   ngOnInit(): void {
-    this.MemberId = this.data
-    console.log(this.MemberId);
+    this.MemberId = this.data.MemberId
+    this.Content = this.data.Content
     // this.dialogRef.close(true)
   }
   removeMember(MemberId : string) {
     this.teamservice.removeMember(MemberId).subscribe(() => {
-      this.router.navigate(['/team/viewteam']);
+      this.router.navigate(['/team']);
     }, error => {
       console.error('Error removing member:', error);
     });

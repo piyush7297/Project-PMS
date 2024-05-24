@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TeamService } from 'src/app/Services/Team/team.service';
-import { DeletecomponentComponent } from 'src/app/Component/deletecomponent/deletecomponent.component';
+import { DeletecomponentComponent } from 'src/app/Component/Dialogs/deletedialog/deletecomponent.component';
+import { UpdatetaskComponent } from 'src/app/Component/Dialogs/UpdateDialogs/updatetask/updatetask.component';
+import { UpdateteamComponent } from 'src/app/Component/Dialogs/UpdateDialogs/updateteam/updateteam.component';
 
 @Component({
   selector: 'app-viewmember',
@@ -33,16 +35,12 @@ export class ViewmemberComponent implements OnInit {
       console.error('Error removing member:', error);
     });
   }
-  updateMember() {
-    this.teamservice.updateMember(this.MemberId, this.memberdata).subscribe(() => {
-      this.router.navigate([`/team/addteam/`]);
-    }, error => {
-      console.error('Error updating member:', error);
-    });
-  }
   openremoveDialog(): void {
     const dialogRef = this.dialog.open(DeletecomponentComponent, {
-      data : this.MemberId
+      data : {
+        MemberId : this.MemberId,
+        Content : "Member"
+      }
     });
     // dialogRef.afterClosed(DeletecomponentComponent);
     // .afterClosed().subscribe((data :any) => {
@@ -52,4 +50,15 @@ export class ViewmemberComponent implements OnInit {
     //   this.taskform.get('taskteam')?.setValue(this.taskTeam)
     // });
   }
+  openUpdatedialog(memberata : {}) {
+    const dialogRef = this.dialog.open(UpdateteamComponent,{
+      data : memberata,
+      panelClass : 'opendialog-container'
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.getMember()
+    });
   }
+}

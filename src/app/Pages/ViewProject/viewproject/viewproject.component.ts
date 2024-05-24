@@ -4,8 +4,9 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { ProjectService } from 'src/app/Services/Project/project.service';
 import { TeamService } from 'src/app/Services/Team/team.service';
-import { TeammodelComponent } from 'src/app/Component/AllTeam/teammodel/teammodel.component';
-import { DeletecomponentComponent } from 'src/app/Component/deletecomponent/deletecomponent.component';
+import { TeammodelComponent } from 'src/app/Component/Dialogs/teammodel/teammodel.component';
+import { DeletecomponentComponent } from 'src/app/Component/Dialogs/deletedialog/deletecomponent.component';
+import { UpdateprojectComponent } from 'src/app/Component/Dialogs/UpdateDialogs/updateproject/updateproject.component';
 @Component({
   selector: 'app-viewproject',
   templateUrl: './viewproject.component.html',
@@ -25,7 +26,10 @@ export class ViewprojectComponent implements OnInit {
   }
   openviewteamDialog() {
     const dialogRef = this.dialog.open(TeammodelComponent , {
-      data : this.projectTeam
+      data : {
+        team : this.projectTeam,
+        teamOf : "Project"
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -56,6 +60,21 @@ export class ViewprojectComponent implements OnInit {
     this.totalTeam = this.projectTeam.length
   }
   openremoveDialog(): void {
-    this.dialog.open(DeletecomponentComponent);
+    const dialogRef = this.dialog.open(DeletecomponentComponent , {
+      data : {
+        Content : "Project"
+      }
+    });
+  }
+  openUpdatedialog(projectdata : any) {
+    const dialogRef = this.dialog.open(UpdateprojectComponent,{
+      data : projectdata,
+      panelClass : 'opendialog-container'
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.getProjectDetail()
+    });
   }
 }

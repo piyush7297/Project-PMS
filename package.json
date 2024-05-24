@@ -23,8 +23,10 @@
     "@angular/router": "~12.2.0",
     "angular-responsive-carousel": "^2.1.2",
     "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1",
     "json-server": "^1.0.0-alpha.23",
     "rxjs": "~6.6.0",
+    "slick-carousel": "^1.8.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

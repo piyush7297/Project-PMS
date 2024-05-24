@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
-import { AddtaskComponent } from 'src/app/Component/Task/addtask/addtask.component';
+import { AddtaskComponent } from 'src/app/Component/Dialogs/addtask/addtask.component';
 import { ProjectService } from 'src/app/Services/Project/project.service';
 import { TaskService } from 'src/app/Services/Task/task.service';
 

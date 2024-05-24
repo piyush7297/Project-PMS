@@ -1,0 +1,157 @@
+<div class="container add-product-section">
+  <div class="row justify-content-center">
+    <section
+      class="d-flex flex-column gap-3 col-lg-12 col-md-12 col-sm-12 col-12 shadow-lg p-4 rounded-3"
+    >
+      <h2
+        class="text-dark fw-bold rounded-3 p-0 m-0 d-flex align-items-center gap-2"
+      >
+        <mat-icon>edit_square</mat-icon> Edit Project
+      </h2>
+      <section class="row justify-content-around">
+        <section class="col-lg-4 col-md-4 col-sm-12 col-12">
+          <div class="w-100 d-flex flex-column gap-2">
+            <figure class="card shadow-lg rounded-3 w-100">
+              <img
+                class="rounded-3 border border-3 border-danger"
+                src="https://img.freepik.com/free-vector/men-teamwork-with-gears-induatry-bulb-idea_24877-54770.jpg?w=740&t=st=1714375888~exp=1714376488~hmac=97ca0d93158e290c0a58545f9ff3dc070c24a524192d6926126551a870a036a0"
+                alt="..."
+              />
+            </figure>
+            <div class="text-center">
+              <div
+                class="text-success fw-bold d-flex gap-2 align-items-center justify-content-center"
+              >
+                <figure class="m-0 p-1 bg-white">
+                  <img
+                    class="bg-white img-fluid social-img"
+                    src="https://w7.pngwing.com/pngs/388/396/png-transparent-computer-icons-social-media-social-media-text-trademark-photography-thumbnail.png"
+                    alt=""
+                  />
+                </figure>
+                <figure class="m-0 bg-white p-2">
+                  <img
+                    class="img-fluid bg-white social-img"
+                    src="https://cdn3.iconfinder.com/data/icons/basicolor-reading-writing/24/077_twitter-512.png"
+                    alt=""
+                  />
+                </figure>
+                <figure class="m-0 p-2 bg-white">
+                  <img
+                    class="img-fluid bg-white social-img"
+                    src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-linkedin-512.png"
+                    alt=""
+                  />
+                </figure>
+                <figure class="m-0 bg-white">
+                  <img
+                    class="img-fluid bg-white social-img"
+                    src="https://www.facebook.com/images/fb_icon_325x325.png"
+                    alt=""
+                  />
+                </figure>
+              </div>
+              <h3 class="text-danger fw-bold fs-6">Add Social Media Links</h3>
+            </div>
+          </div>
+        </section>
+        <section class="col-lg-6 col-md-6 col-sm-12 col-12">
+          <section class="col-lg-12 col-md-12 col-sm-12 col-12">
+            <form
+              class="flex-column d-flex gap-3"
+              [formGroup]="projectform"
+              (ngSubmit)="addProject()"
+            >
+              <div class="">
+                <mat-form-field appearance="fill" class="w-100 rounded-3">
+                  <mat-label class="text-dark">Project Name</mat-label>
+                  <input matInput formControlName="name" />
+                </mat-form-field>
+                <div
+                  *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                  class="text-danger"
+                >
+                  <div *ngIf="name?.errors?.required">
+                    This Field is required
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <mat-form-field appearance="fill" class="w-100 text-dark">
+                  <mat-label class="text-dark">Select Project Status</mat-label>
+                  <mat-select formControlName="status">
+                    <mat-option value="Pending">Pending</mat-option>
+                    <mat-option value="Completed">Completed</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <div
+                  *ngIf="status?.invalid && (status?.dirty || status?.touched)"
+                  class="text-danger"
+                >
+                  <div *ngIf="status?.errors?.required">
+                    This Field is required
+                  </div>
+                </div>
+              </div>
+              <div class=" ">
+                <mat-form-field appearance="fill" class="w-100 text-dark">
+                  <mat-label class="text-dark">Project Category</mat-label>
+                  <mat-select formControlName="category">
+                    <mat-option value="ECOM">ECOM</mat-option>
+                    <mat-option value="CMS">CMS</mat-option>
+                    <mat-option value="IT & Sales">IT & Sales</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <div
+                  *ngIf="
+                    category?.invalid && (category?.dirty || category?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <div *ngIf="category?.errors?.required">
+                    This Field is required
+                  </div>
+                </div>
+              </div>
+              <div class="">
+                <mat-form-field class="rounded-3 w-100">
+                  <mat-label class="text-dark ps-2">Project Started </mat-label>
+                  <input
+                    class="text-dark px-2"
+                    matInput
+                    [matDatepicker]="picker"
+                    formControlName="started"
+                  />
+                  <mat-datepicker-toggle
+                    class="text-dark"
+                    matSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <div
+                  *ngIf="
+                    started?.invalid && (started?.dirty || started?.touched)
+                  "
+                  class="text-danger"
+                >
+                  <div *ngIf="started?.errors?.required">
+                    This Field is required
+                  </div>
+                </div>
+              </div>
+              <button
+                class="bg-success bg-opacity-75"
+                mat-raised-button
+                color="accent"
+                type="submit"
+              >
+                Update Details
+              </button>
+            </form>
+          </section>
+        </section>
+      </section>
+    </section>
+  </div>
+</div>

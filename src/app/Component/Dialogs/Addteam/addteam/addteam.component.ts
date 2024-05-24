@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation ,  } from '@angular/core';
 import { FormsModule , ReactiveFormsModule , FormGroup , FormControlName , FormBuilder, FormControl, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProjectService } from 'src/app/Services/Project/project.service';
 import { TeamService } from 'src/app/Services/Team/team.service';
 
@@ -13,7 +15,7 @@ export class AddteamComponent implements OnInit {
   projects : any[] = [];
 
 
-  constructor(public fb : FormBuilder , public teamService : TeamService , private projectService : ProjectService) {
+  constructor(public fb : FormBuilder , public teamService : TeamService , private projectService : ProjectService , private dialogRef : MatDialogRef<AddteamComponent> , private snackbar : MatSnackBar) {
     this.memberForm()
   }
   ngOnInit(): void {
@@ -61,6 +63,12 @@ export class AddteamComponent implements OnInit {
 
       this.allMember.push(this.teamForm.value)
       this.teamForm.reset()
+      this.dialogRef.close()
+      this.snackbar.open('Member added successfully', '' ,  {
+        duration: 2000,
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+      });
     }
     else{
       this.teamForm.markAllAsTouched()

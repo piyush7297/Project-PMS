@@ -1,11 +1,11 @@
 <div class="container">
-  <h2 mat-dialog-title class="">Project Team</h2>
+  <h2 mat-dialog-title class="">{{teamOf}} Team</h2>
   <mat-dialog-content class="mat-typography">
     <ng-container *ngIf="team.length>0; else noteam">
       <div class="col-12 table-section">
         <table class="w-100">
           <thead
-            class="text-center border-2 border-secondary rounded-3 bg-dark fw-bold text-white"
+            class="text-center  border-secondary rounded-3 bg-dark fw-bold text-white position-sticky top-0 z-3"
           >
             <th></th>
             <th class="p-2 px-4 ">Name</th>

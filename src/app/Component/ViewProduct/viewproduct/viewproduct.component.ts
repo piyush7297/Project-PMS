@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ProjectService } from 'src/app/Services/Project/project.service';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { AddproductComponent } from '../../Addproudct/addproduct/addproduct.component';
+import { AddproductComponent } from '../../Dialogs/Addproudct/addproduct/addproduct.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({

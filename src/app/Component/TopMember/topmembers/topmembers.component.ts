@@ -10,6 +10,6 @@ export class TopmembersComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-
+  } 
 }
+

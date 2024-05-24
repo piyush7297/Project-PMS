@@ -11,7 +11,7 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu" class="bg-white">
-            <button mat-menu-item>Edit</button>
+            <button mat-menu-item (click)="openUpdatedialog(project)">Edit</button>
             <button mat-menu-item (click)="openremoveDialog()">Remove</button>
           </mat-menu>
         </span>
@@ -49,7 +49,7 @@
           </h4>
           <h4 class="text-success fw-bold d-flex align-items-center">
             Started <mat-icon>navigate_next</mat-icon>
-            <span class="text-secondary fw-bolder">{{ project.started }}</span>
+            <span class="text-secondary fw-bolder">{{ project.started | date }}</span>
           </h4>
           <h4 class="text-success fw-bold d-flex gap-3 align-items-center">
             Social Media <mat-icon>navigate_next</mat-icon>
@@ -88,14 +88,14 @@
         <div
           class="d-flex flex-column gap-2 col-lg-5 col-md-5 col-sm-12 col-12"
         >
-          <h2 class="m-0 p-0 text-danger">Team</h2>
+          <h2 class="m-0 p-0 text-dark">Team</h2>
           <div
             class="d-flex align-items-center justify-content-between fw-bold"
           >
             <h3 class="text-dark p-0 m-0">Team Member {{ totalTeam }}</h3>
             <!-- <span class="text-danger">View All</span> -->
             <button
-              class="text-danger"
+              class="text-info"
               mat-button
               (click)="openviewteamDialog()"
             >

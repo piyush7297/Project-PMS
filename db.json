@@ -190,7 +190,7 @@
       "gender": "Male",
       "profession": "Software Engineer",
       "salary": "Below 3 LPA",
-      "project": "DopeShop"
+      "project": "IControl"
     },
     {
       "id": "efca",
@@ -313,30 +313,6 @@
       "project": "AJM Official"
     },
     {
-      "id": "d942",
-      "name": "Testing",
-      "email": "testing@gmail.com",
-      "phone": "4983985837",
-      "role": "Tester",
-      "address": "",
-      "gender": "Male",
-      "profession": "Digital Marketing",
-      "salary": "3 LPA to 5 LPA",
-      "project": "AJM Official"
-    },
-    {
-      "id": "c8b0",
-      "name": "Testing",
-      "email": "Testing@gmail.com",
-      "phone": "0854689745",
-      "role": "Testing",
-      "address": "",
-      "gender": "Male",
-      "profession": "Digital Marketing",
-      "salary": null,
-      "project": "AJM Official"
-    },
-    {
       "id": "fd14",
       "name": "Artee Prajapati",
       "email": "artee@gmail.com",
@@ -347,6 +323,18 @@
       "profession": "Software Engineer",
       "salary": "",
       "project": "OrderAxe"
+    },
+    {
+      "id": "1ec3",
+      "name": "Tesing",
+      "email": "Tesing@g",
+      "phone": "8579040930",
+      "role": "Tesing",
+      "address": "Tesing",
+      "gender": "Male",
+      "profession": "IT & Sales",
+      "salary": "",
+      "project": "AJM Official"
     }
   ],
   "projects": [
@@ -355,21 +343,14 @@
       "name": "OrderAxe",
       "category": "CMS",
       "status": "Pending",
-      "started": "01/04/2021"
+      "started": "2021-01-03T18:30:00.000Z"
     },
     {
       "id": "4954",
       "name": "AJM Official",
       "category": "CMS",
       "status": "Completed",
-      "started": "09/03/2022"
-    },
-    {
-      "id": "d65e",
-      "name": "DopeShop",
-      "category": "ECOM",
-      "status": "Pending",
-      "started": "27/03/2024"
+      "started": "2022-09-02T18:30:00.000Z"
     },
     {
       "id": "604a",
@@ -384,6 +365,13 @@
       "category": "ECOM",
       "status": "Pending",
       "started": "2023-03-15T18:30:00.000Z"
+    },
+    {
+      "id": "ec0a",
+      "name": "IControl",
+      "category": "CMS",
+      "status": "Pending",
+      "started": "2024-04-17T18:30:00.000Z"
     }
   ],
   "tasks": [
@@ -394,7 +382,7 @@
       "status": "Pending",
       "startdate": "2024-05-14T18:30:00.000Z",
       "enddate": "2024-05-15T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -414,10 +402,10 @@
       "id": "a91e",
       "title": "Implement remove functionality ",
       "task": "in Add task model - remove button on team",
-      "status": "Pending",
+      "status": "Completed",
       "startdate": "2024-05-14T18:30:00.000Z",
       "enddate": "2024-05-15T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -437,10 +425,10 @@
       "id": "d3e5",
       "title": "Assign more team functionality",
       "task": "in add task page and task detail page filter assigned team from all team ",
-      "status": "Pending",
+      "status": "Completed",
       "startdate": "2024-05-14T18:30:00.000Z",
       "enddate": "2024-05-16T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -463,7 +451,7 @@
       "status": "Completed",
       "startdate": "2024-05-13T18:30:00.000Z",
       "enddate": "2024-05-14T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -486,7 +474,7 @@
       "status": "Completed",
       "startdate": "2024-05-13T18:30:00.000Z",
       "enddate": "2024-05-14T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -509,7 +497,7 @@
       "status": "Pending",
       "startdate": "2024-05-15T18:30:00.000Z",
       "enddate": "2024-05-16T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -532,7 +520,7 @@
       "status": "Pending",
       "startdate": "2024-05-16T18:30:00.000Z",
       "enddate": "2024-05-17T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -552,10 +540,10 @@
       "id": "d51f",
       "title": "Update Status in task and project module",
       "task": "We can change the status to pending to completed or completed to pending ",
-      "status": "Pending",
+      "status": "Completed",
       "startdate": "2024-05-16T18:30:00.000Z",
       "enddate": "2024-05-17T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -578,7 +566,7 @@
       "status": "Pending",
       "startdate": "2024-05-15T18:30:00.000Z",
       "enddate": "2024-05-17T18:30:00.000Z",
-      "project": "DopeShop",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8e39",
@@ -595,13 +583,59 @@
       ]
     },
     {
-      "id": "b7f9",
-      "title": "Make Login API ",
-      "task": "Make a login API for OrderAxe",
+      "id": "95fc",
+      "title": "Implement edit functionality",
+      "task": "Edit functionality in project and team ",
+      "status": "Completed",
+      "startdate": "2024-05-22T18:30:00.000Z",
+      "enddate": "2024-05-22T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "991d",
+      "title": "Apply Regex in search ",
+      "task": "improve search filter functionality ",
       "status": "Pending",
-      "startdate": "2024-05-19T18:30:00.000Z",
-      "enddate": "2024-05-20T18:30:00.000Z",
-      "project": "OrderAxe",
+      "startdate": "2024-05-23T18:30:00.000Z",
+      "enddate": "2024-05-24T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "7257",
+      "title": "Paginator not working properly",
+      "task": "fix paginator issue in team module ",
+      "status": "Pending",
+      "startdate": "2024-05-23T18:30:00.000Z",
+      "enddate": "2024-05-24T18:30:00.000Z",
+      "project": "IControl",
       "taskteam": [
         {
           "id": "8d05",
@@ -614,18 +648,190 @@
           "profession": "Software Engineer",
           "salary": "Above 10 LPA",
           "project": "OrderAxe"
-        },
+        }
+      ]
+    },
+    {
+      "id": "27e7",
+      "title": "Implement search functionality in team dialog ",
+      "task": "search filter is necessary in viewteam and assign team model (dialog)",
+      "status": "Pending",
+      "startdate": "2024-05-23T18:30:00.000Z",
+      "enddate": "2024-05-24T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
         {
-          "id": "f81a",
-          "name": "Siddharth Sharma",
-          "email": "sid123@gmail.com",
-          "phone": "8398283298",
-          "role": "Backend Developer",
-          "address": "Sardarpura , Jodhpur",
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
           "gender": "Male",
           "profession": "Software Engineer",
-          "salary": "5 LPA to 7 LPA",
-          "project": "OrderAxe"
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "afb0",
+      "title": "filter assigned team in add task ",
+      "task": "when we open filtered team dialog the already assigned team should selected and show on top of the list",
+      "status": "Pending",
+      "startdate": "2024-05-23T18:30:00.000Z",
+      "enddate": "2024-05-26T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "4ff4",
+      "title": "Apply nested filter",
+      "task": "nested filter in Team,Task and project module ",
+      "status": "Pending",
+      "startdate": "2024-05-24T18:30:00.000Z",
+      "enddate": "2024-05-26T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "fb38",
+      "title": "Add snackbar ",
+      "task": "implement snackbar after action performed by user in Add , Update and Remove case",
+      "status": "Completed",
+      "startdate": "2024-05-24T18:30:00.000Z",
+      "enddate": "2024-05-26T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "6c89",
+      "title": "Clear all console",
+      "task": "clear console from all modules ",
+      "status": "Pending",
+      "startdate": "2024-05-26T18:30:00.000Z",
+      "enddate": "2024-05-26T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "90d7",
+      "title": "Improve folder structure ",
+      "task": "Improve folder structure for better structure ",
+      "status": "Pending",
+      "startdate": "2024-05-26T18:30:00.000Z",
+      "enddate": "2024-05-26T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "DopeShop"
+        }
+      ]
+    },
+    {
+      "id": "2362",
+      "title": "Close all dialogs and update the data ",
+      "task": "after clicking the button close the dialog from update model and update data instantly through calling API",
+      "status": "Completed",
+      "startdate": "2024-05-23T18:30:00.000Z",
+      "enddate": "2024-05-23T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "IControl"
+        }
+      ]
+    },
+    {
+      "id": "ae93",
+      "title": "give proper route-name",
+      "task": "give proper route name in project and team module ",
+      "status": "Pending",
+      "startdate": "2024-05-23T18:30:00.000Z",
+      "enddate": "2024-05-24T18:30:00.000Z",
+      "project": "IControl",
+      "taskteam": [
+        {
+          "id": "8e39",
+          "name": "Piyush Sharma",
+          "email": "ps72978255@gmail.com",
+          "phone": "7297825537",
+          "role": "Frontend WebDeveloper",
+          "address": "275A , Bapu Nagar , Jhalamand , Jodhpur",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "IControl"
         }
       ]
     }

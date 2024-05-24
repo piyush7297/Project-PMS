@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 
 @Injectable({
@@ -26,9 +27,15 @@ export class TeamService {
   removeMember(memberId: any): Observable<any> {
     return this.http.delete(`${this.url}/${memberId}`);
   }
-  updateMember(memberId: any, memberData: any): Observable<any> {
-    return this.http.put(`${this.url}/${memberId}`, memberData);
-    // or use PATCH if you're updating only specific fields: return this.http.patch(`${this.baseUrl}/members/${memberId}`, memberData);
+  updateTeam(memberId: any, updatedData: any): Observable<any> {
+    return  this.http.patch(`${this.url}/${memberId}`, updatedData)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+  private handleError(error: HttpErrorResponse) {
+    console.error('An error occurred:', error.message);
+    return throwError('Something went wrong; please try again later.');
   }
 }
 

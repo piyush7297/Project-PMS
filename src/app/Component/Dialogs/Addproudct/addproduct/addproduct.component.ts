@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup , FormControl , FormControlName, Validators} from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProjectService } from 'src/app/Services/Project/project.service';
 
 @Component({
@@ -11,7 +13,7 @@ import { ProjectService } from 'src/app/Services/Project/project.service';
 export class AddproductComponent implements OnInit {
   startDate = new Date(1990, 0, 1);
 
-  constructor(private fb : FormBuilder , private projectService : ProjectService) {
+  constructor(private fb : FormBuilder , private projectService : ProjectService , private snackbar : MatSnackBar , private dialogref : MatDialogRef<AddproductComponent>) {
     this.projectForm()
    }
   public projectform : FormGroup = new FormGroup({})
@@ -45,6 +47,12 @@ export class AddproductComponent implements OnInit {
       console.log(this.projectform.value)
       this.projectService.setProject(this.projectform.value)
       this.projectform.reset()
+      this.dialogref.close()
+      this.snackbar.open('Project added successfully', '' ,  {
+        duration: 2000,
+        horizontalPosition: 'end',
+        verticalPosition: 'top',
+      });
     }
     else{
       console.log('Please Enter all fields ');

@@ -72,7 +72,7 @@
               <mat-icon>more_vert</mat-icon>
             </button>
             <mat-menu #menu="matMenu" class="bg-white">
-              <button mat-menu-item>Edit</button>
+              <button mat-menu-item (click)="openUpdatedialog(memberdata)">Edit</button>
               <button mat-menu-item>Pin</button>
               <button
                 mat-menu-item
@@ -118,26 +118,26 @@
             <p class="m-0 text-dark">About 4+ years of Experience</p>
           </div>
         </div>
-        <h4 class="text-danger fw-bold d-flex align-items-center pt-3">
+        <h4 class=" fw-bold d-flex align-items-center pt-3">
           Gender <mat-icon>navigate_next</mat-icon>
           <span class="text-secondary fw-bolder">{{ memberdata?.gender }}</span>
         </h4>
-        <h4 class="text-danger fw-bold d-flex align-items-center">
+        <h4 class=" fw-bold d-flex align-items-center">
           Profession <mat-icon>navigate_next</mat-icon>
           <span class="text-secondary fw-bolder">{{
             memberdata?.profession
           }}</span>
         </h4>
-        <h4 class="text-danger fw-bold d-flex align-items-center">
+        <h4 class=" fw-bold d-flex align-items-center">
           Project <mat-icon>navigate_next</mat-icon>
           <span class="text-secondary fw-bolder">{{
             memberdata?.project
           }}</span>
         </h4>
-        <h4 class="text-danger fw-bold d-flex align-items-center">
+        <!-- <h4 class="text-danger fw-bold d-flex align-items-center">
           Salary <mat-icon>navigate_next</mat-icon>
           <span class="text-secondary fw-bolder">{{ memberdata?.salary }}</span>
-        </h4>
+        </h4> -->
       </section>
     </div>
   </div>

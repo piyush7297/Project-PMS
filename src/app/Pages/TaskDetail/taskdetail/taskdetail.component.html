@@ -11,7 +11,7 @@
             <mat-icon>more_vert</mat-icon>
           </button>
           <mat-menu #menu="matMenu" class="bg-white">
-            <button mat-menu-item>Edit</button>
+            <button mat-menu-item (click)="openUpdatedialog(TaskId)">Edit</button>
             <button mat-menu-item (click)="openremoveDialog()">Remove</button>
           </mat-menu>
         </span>
@@ -43,11 +43,11 @@
           </h4>
           <h4 class="fw-bold d-flex align-items-center">
             Start-Date <mat-icon>navigate_next</mat-icon>
-            <span class="text-secondary fw-bolder">{{ task.startdate }}</span>
+            <span class="text-secondary fw-bolder">{{ task.startdate | date }}</span>
           </h4>
           <h4 class="fw-bold d-flex align-items-center">
             End-Date <mat-icon>navigate_next</mat-icon>
-            <span class="text-secondary fw-bolder">{{ task.enddate }}</span>
+            <span class="text-secondary fw-bolder">{{ task.enddate | date}}</span>
           </h4>
           <h4 class="fw-bold d-flex align-items-center">
             Assigned Team <mat-icon>navigate_next</mat-icon>

@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,8 +21,17 @@ export class TaskService {
       console.log(res);
     })
   }
-  getSingleTask(taslId : any){
-    return this.http.get(`${this.url}/${taslId}`)
+  getSingleTask(taskId : any){
+    return this.http.get(`${this.url}/${taskId}`)
   }
-
+  updateTask(taskId: number, updatedData: any): Observable<any> {
+    return  this.http.patch(`${this.url}/${taskId}`, updatedData)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+  private handleError(error: HttpErrorResponse) {
+    console.error('An error occurred:', error.message);
+    return throwError('Something went wrong; please try again later.');
+  }
 }

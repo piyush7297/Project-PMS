@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { TeamService } from 'src/app/Services/Team/team.service';
-import { TeammodelComponent } from 'src/app/Component/AllTeam/teammodel/teammodel.component';
-import { DeletecomponentComponent } from 'src/app/Component/deletecomponent/deletecomponent.component';
+import { TeammodelComponent } from 'src/app/Component/Dialogs/teammodel/teammodel.component';
+import { DeletecomponentComponent } from 'src/app/Component/Dialogs/deletedialog/deletecomponent.component';
 import { TaskService } from 'src/app/Services/Task/task.service';
-import { TaskteammodelComponent } from 'src/app/Component/TaskTeam/taskteammodel/taskteammodel.component';
+import { TaskteammodelComponent } from 'src/app/Component/AllTeam/TaskTeam/taskteammodel/taskteammodel.component';
+import { UpdatetaskComponent } from 'src/app/Component/Dialogs/UpdateDialogs/updatetask/updatetask.component';
 
 @Component({
   selector: 'app-taskdetail',
@@ -28,7 +29,10 @@ export class TaskdetailComponent implements OnInit {
   }
   openviewteamDialog() {
     const dialogRef = this.dialog.open(TeammodelComponent , {
-      data : this.taskTeam
+      data : {
+        team : this.taskTeam,
+        teamOf : "Task"
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -72,6 +76,25 @@ export class TaskdetailComponent implements OnInit {
     console.log(TaskMemberId);
   }
   openremoveDialog(): void {
-    this.dialog.open(DeletecomponentComponent);
+    const dialogRef = this.dialog.open(DeletecomponentComponent, {
+      data : {
+        TaskId : this.TaskId,
+        Content : "Task"
+      }
+    });
+  }
+  openUpdatedialog(Id : any) {
+    const dialogRef = this.dialog.open(UpdatetaskComponent,{
+      data : {
+        task :this.task ,
+        taskteam : this.taskTeam
+      },
+      panelClass : 'opendialog-container'
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.gettaskDetail()
+    });
   }
 }

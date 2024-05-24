@@ -61,7 +61,7 @@
         <h2 class="text-dark d-flex align-items-center">
           {{ status }} Projects
           <span class="material-icons">navigate_next</span>
-          <span class="text-danger">{{ filteredProjects.length }}</span>
+          <span class="text-dark">{{ filteredProjects.length }}</span>
         </h2>
       </div>
       <p class="text-secondary">
@@ -92,14 +92,14 @@
                 />
               </div>
               <span
-                class="position-absolute z-1 end-0 p-1 text-white rounded-1 top-0 bg-success top-0"
+                class="position-absolute z-1 end-0 p-1 text-white rounded-1 top-0 bg-success top-0 fw-bold"
                 *ngIf="project.status === 'Completed'; else pending"
               >
                 {{ project.status }}</span
               >
               <ng-template #pending>
                 <span
-                  class="position-absolute z-1 end-0 p-1 text-white top-0 bg-danger rounded-1"
+                  class="position-absolute z-1 end-0 p-1 text-white top-0 bg-danger rounded-1 fw-bold"
                 >
                   {{ project.status }}</span
                 >
@@ -107,7 +107,7 @@
             </div>
             <div class="p-2">
               <h3 class="fw-bold m-0 py-1">{{ project.name }}</h3>
-              <p class="">Started : {{ project.started }}</p>
+              <p class="">Started : {{ project.started |  date}}</p>
               <!-- <span class="position-absolute bottom-0 end-0 text-dark px-1 fw-bold m-0 pb-1">Category : {{project.category}}</span> -->
               <p class="">Category : {{ project.category }}</p>
             </div>

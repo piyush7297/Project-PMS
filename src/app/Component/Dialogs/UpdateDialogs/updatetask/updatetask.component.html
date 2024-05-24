@@ -1,0 +1,165 @@
+<div class="container add-task-section">
+  <div class="row justify-content-center">
+    <section class="d-flex flex-column gap-3 shadow-lg p-4 rounded-3">
+      <h2
+        class="text-dark fw-bold rounded-3 p-0 m-0 d-flex align-items-center gap-2"
+      >
+        <mat-icon>edit_square</mat-icon> Edit Task
+      </h2>
+      <section class="d-flex justify-content-between">
+        <section class="col-lg-3 col-md-4 col-sm-4 col-1">
+          <div class="card">
+            <img
+              class=""
+              src="https://img.freepik.com/free-vector/online-document-form-digital-agreement-electronic-contract-internet-questionnaire-list-note-voting-ballot-poll-flat-design-element_335657-2667.jpg?t=st=1715325556~exp=1715329156~hmac=d07291b24d1513b46ba6340a5211b8adea7e61acc5a2e23a463f2f675c52be4e&w=740"
+              alt="..."
+            />
+          </div>
+        </section>
+        <section class="col-lg-9 col-md-8 col-sm-8 col-11 px-2">
+          <form
+            class="flex-column d-flex gap-3"
+            [formGroup]="taskform"
+            (ngSubmit)="addTask()"
+          >
+            <mat-form-field appearance="fill" class="w-100 text-dark">
+              <mat-label class="text-dark">Title</mat-label>
+              <input matInput formControlName="title" />
+              <div
+              *ngIf="title?.invalid && (title?.dirty || title?.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="title?.errors?.required">This field is required.</div>
+              <div *ngIf="title?.errors?.minlength">
+                Name must be at least 2 characters long.
+              </div>
+            </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label class="text-dark">Task Description</mat-label>
+              <textarea matInput formControlName="task"></textarea>
+              <div
+              *ngIf="task?.invalid && (task?.dirty || task?.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="task?.errors?.required">This field is required.</div>
+              <div *ngIf="task?.errors?.minlength">
+                Name must be at least 2 characters long.
+              </div>
+            </div>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label class="text-dark">Enter a date range</mat-label>
+              <mat-date-range-input [rangePicker]="picker">
+                <input
+                  matStartDate
+                  placeholder="Start date"
+                  formControlName="startdate"
+                />
+                <input
+                  matEndDate
+                  placeholder="End date"
+                  formControlName="enddate"
+                />
+              </mat-date-range-input>
+              <mat-hint class="text-dark">MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-date-range-picker #picker></mat-date-range-picker>
+              <div
+              *ngIf="startdate?.invalid && (startdate?.dirty || startdate?.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="startdate?.errors?.required">This field is required.</div>
+              <div *ngIf="startdate?.errors?.minlength">
+                Name must be at least 2 characters long.
+              </div>
+            </div>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="w-100 text-dark">
+              <mat-label class="text-dark">Select Project </mat-label>
+              <mat-select formControlName="project">
+                <mat-option
+                  *ngFor="let project of projects"
+                  value="{{ project.name }}"
+                  >{{ project.name }}</mat-option
+                >
+              </mat-select>
+              <div
+            *ngIf="project?.invalid && (project?.dirty || project?.touched)"
+            class="text-danger"
+          >
+            <div *ngIf="project?.errors?.required">This field is required.</div>
+            </div>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="w-100 text-dark">
+              <mat-label class="text-dark">Select Task Status</mat-label>
+              <mat-select formControlName="status">
+                <mat-option value="Pending">Pending</mat-option>
+                <mat-option value="Completed">Completed</mat-option>
+              </mat-select>
+              <div
+              *ngIf="status?.invalid && (status?.dirty || status?.touched)"
+              class="text-danger"
+            >
+              <div *ngIf="status?.errors?.required">This field is required.</div>
+              </div>
+            </mat-form-field>
+       <div>
+        <ng-container *ngIf="taskTeamLength > 0">
+          <div class="d-flex justify-content-between px-2">
+            <p >Selected Team</p><p class="bg-secondary text-white px-2 rounded-3">{{taskTeamLength}}</p>
+          </div>
+          <div class="d-flex  task-team-container profiles p-1 mb-1">
+            <figure class="text-decoration-none profiles__group m-0" *ngFor="let team of taskTeam" [matTooltip]="team.name">
+                <img class="task-team-img"  src="https://img.freepik.com/free-vector/purple-man-with-blue-hair_24877-82003.jpg?t=st=1715754246~exp=1715757846~hmac=00ab9ec1a6faff3ccd50c40ace87992fc2ad3c16286a6f19ce8fb41705caa1ec&w=740" alt="">
+                <!-- <figcaption class="fig-caption p-0 m-0">
+                  {{team.name}}
+                </figcaption> -->
+                <!-- <p class="px-2 py-1 m-0">{{team.name}}</p> -->
+                <span class="close-btn-parent" role="button" (click)="removeMember(team.id)">
+                  <mat-icon class="close-button">close</mat-icon>
+                </span>
+            </figure>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="taskTeamLength == 0 else teamexist" >
+          <button
+          class="text-danger d-flex align-items-center bg-secondary bg-opacity-10 w-100"
+          type="button"
+          mat-button
+          (click)="openviewteamDialog()"
+        >
+          <mat-icon>group_add</mat-icon> Assign Team
+        </button>
+        </ng-container>
+        <ng-template #teamexist>
+          <button
+          class="text-danger d-flex align-items-center bg-secondary bg-opacity-10 w-100"
+          type="button"
+          mat-button
+          (click)="openfilteredteamDialog()"
+        >
+          <mat-icon>group_add</mat-icon> Assign More Team
+        </button>
+        </ng-template>
+       </div>
+            <button
+              class="bg-success bg-opacity-75 text-white"
+              mat-raised-button
+              color="accent"
+              type="submit"
+            >
+              Update Task
+            </button>
+          </form>
+        </section>
+      </section>
+      <section class="col-lg-12 col-md-12 col-sm-12 col-12"></section>
+    </section>
+  </div>
+</div>

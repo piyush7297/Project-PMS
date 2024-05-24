@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 
 @Injectable({
@@ -22,6 +23,16 @@ export class ProjectService {
   getSingleProject(projectId : any)
   {
    return this.http.get(`${this.url}/${projectId}`)
+  }
+  updateProject(projectId: any, updatedData: any): Observable<any> {
+    return  this.http.patch(`${this.url}/${projectId}`, updatedData)
+    .pipe(
+      catchError(this.handleError)
+    )
+  }
+  private handleError(error: HttpErrorResponse) {
+    console.error('An error occurred:', error.message);
+    return throwError('Something went wrong; please try again later.');
   }
 }
 

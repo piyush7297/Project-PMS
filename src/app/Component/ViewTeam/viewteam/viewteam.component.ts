@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormControlName , FormControl, FormGroup } from '@angular/forms';
 import { ProjectService } from 'src/app/Services/Project/project.service';
 import { TeamService } from 'src/app/Services/Team/team.service';
-import { AddteamComponent } from '../../Addteam/addteam/addteam.component';
+import { AddteamComponent } from '../../Dialogs/Addteam/addteam/addteam.component';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 
