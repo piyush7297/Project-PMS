@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TeamService } from 'src/app/Services/Team/team.service';
 import { TeammodelComponent } from 'src/app/Component/Dialogs/teammodel/teammodel.component';
 import { DeletecomponentComponent } from 'src/app/Component/Dialogs/deletedialog/deletecomponent.component';
@@ -15,7 +15,7 @@ import { UpdatetaskComponent } from 'src/app/Component/Dialogs/UpdateDialogs/upd
 })
 export class TaskdetailComponent implements OnInit {
 
-  constructor(private activateRoute : ActivatedRoute , private taskService : TaskService , private teamService : TeamService , private dialog : MatDialog) { }
+  constructor(private activateRoute : ActivatedRoute , private router : Router , private taskService : TaskService , private teamService : TeamService , private dialog : MatDialog) { }
 
   TaskId : any = this.activateRoute.snapshot.paramMap.get('id');
   task : any = {};
@@ -76,12 +76,21 @@ export class TaskdetailComponent implements OnInit {
     console.log(TaskMemberId);
   }
   openremoveDialog(): void {
-    const dialogRef = this.dialog.open(DeletecomponentComponent, {
+    this.dialog.open(DeletecomponentComponent, {
       data : {
         TaskId : this.TaskId,
         Content : "Task"
       }
-    });
+    }).afterClosed().subscribe((result : any)=>{
+      if(result.result){
+        this.taskService.removeTask(this.TaskId).subscribe()
+        this.router.navigate(['/viewtask'])
+      }
+      else{
+        console.log('False');
+      }
+    })
+
   }
   openUpdatedialog(Id : any) {
     const dialogRef = this.dialog.open(UpdatetaskComponent,{

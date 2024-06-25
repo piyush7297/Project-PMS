@@ -3,8 +3,8 @@
     Are you sure to remove this {{Content}}?
   </h2>
   <mat-dialog-actions>
-    <button mat-button mat-dialog-close>No</button>
-    <button mat-button mat-dialog-close cdkFocusInitial (click)="removeMember(MemberId)">Yes</button>
+    <button mat-button mat-dialog-close (click)="dialogResultfalse()">No</button>
+    <button mat-button mat-dialog-close cdkFocusInitial (click)="dialogResulttrue()">Yes</button>
   </mat-dialog-actions>
 
 </div>

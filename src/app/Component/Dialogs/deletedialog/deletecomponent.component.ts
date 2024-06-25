@@ -1,5 +1,6 @@
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { ViewmemberComponent } from 'src/app/Pages/ViewMember/viewmember/viewmember.component';
 import { TeamService } from 'src/app/Services/Team/team.service';
@@ -10,8 +11,8 @@ import { TeamService } from 'src/app/Services/Team/team.service';
   styleUrls: ['./deletecomponent.component.scss']
 })
 export class DeletecomponentComponent implements OnInit {
-  @Input () delete_item : string = ''
-  constructor( @Inject(MAT_DIALOG_DATA) public data: any ,  public dialogRef: MatDialogRef<ViewmemberComponent> , private teamservice : TeamService , public router : Router ) { }
+  @Input () delete_item : string = '';
+  constructor( @Inject(MAT_DIALOG_DATA) public data: any , public snackbar : MatSnackBar ,  public dialogRef: MatDialogRef<ViewmemberComponent> , private teamservice : TeamService , public router : Router ) { }
   MemberId : string = '';
   Content : string = '';
   ngOnInit(): void {
@@ -19,11 +20,15 @@ export class DeletecomponentComponent implements OnInit {
     this.Content = this.data.Content
     // this.dialogRef.close(true)
   }
-  removeMember(MemberId : string) {
-    this.teamservice.removeMember(MemberId).subscribe(() => {
-      this.router.navigate(['/team']);
-    }, error => {
-      console.error('Error removing member:', error);
+  dialogResulttrue() {
+    this.dialogRef.close({result : true})
+    this.snackbar.open(`${ this.Content} deleted successfully`, '' ,  {
+      duration: 2000,
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
     });
+  }
+  dialogResultfalse(){
+    this.dialogRef.close({result : false})
   }
 }

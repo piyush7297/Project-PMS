@@ -13,7 +13,7 @@ import { TaskService } from 'src/app/Services/Task/task.service';
 })
 export class ViewtaskComponent implements OnInit {
   tasks: any[] = [];
-  filterTasks: any[] = [];
+  filteredTasks: any[] = [];
   projects : any;
   status: string = '';
   project : string = '';
@@ -36,23 +36,33 @@ export class ViewtaskComponent implements OnInit {
   getTask(){
     this.taskService.getTasks().subscribe((res:any)=>{
       this.tasks = res
-      this.filterTasks = res
+      this.filteredTasks = res
     })
     this.filterStatus()
   }
   searchText: string = '';
 
   onSearch(searchValue: string) {
-    this.searchText = searchValue
+    this.searchText = searchValue.trim().toLowerCase().replace(/\s/g, '')
+    this.filterOnSearch()
+  }
+  filterOnSearch(){
+    if(this.searchText === ''){
+      this.filteredTasks = this.tasks
+      return;
+    }
+    this.filteredTasks  = this.tasks.filter(item =>
+      item.task.trim().toLowerCase().replace(/\s/g, '').includes(this.searchText)
+    )
   }
   filterStatus(){
     this.taskform.get('status')?.valueChanges.subscribe((value: string) => {
       this.status = value
       if (!this.status) {
-        this.filterTasks = this.tasks
+        this.filteredTasks = this.tasks
       }
       else {
-        this.filterTasks = this.tasks.filter(a => a.status.toLowerCase() === this.status.toLowerCase())
+        this.filteredTasks = this.tasks.filter(a => a.status.toLowerCase() === this.status.toLowerCase())
       }
     })
     this.filterProject();
@@ -61,10 +71,10 @@ export class ViewtaskComponent implements OnInit {
     this.taskform.get('project')?.valueChanges.subscribe((value: string) => {
       this.project = value
       if (this.project === '') {
-        this.filterTasks = this.tasks
+        this.filteredTasks = this.tasks
       }
       else {
-        this.filterTasks = this.tasks.filter(a => a.project.toLowerCase() === this.project.toLowerCase())
+        this.filteredTasks = this.tasks.filter(a => a.project.toLowerCase() === this.project.toLowerCase())
       }
       console.log('Selected Project -> ' + this.project);
     })
@@ -76,6 +86,7 @@ export class ViewtaskComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.getTask()
     });
   }
   getProjects(){

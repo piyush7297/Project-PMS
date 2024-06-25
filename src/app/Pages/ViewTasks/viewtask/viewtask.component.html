@@ -63,7 +63,8 @@
         <h2 class="text-dark d-flex align-items-center">
           {{ status }} Tasks
           <span class="material-icons">navigate_next</span>
-          <span class="text-dark">{{ filterTasks.length }}</span>
+          <span class="text-dark
+          ">{{ filteredTasks.length }}</span>
         </h2>
       </div>
       <!-- <p class="text-secondary">
@@ -73,17 +74,14 @@
         collaborates seamlessly to tackle challenges and deliver exceptional
         results.
       </p> -->
-      <ng-container *ngIf="filterTasks.length>0 ; else noData">
-        <ng-container *ngFor="let task of filterTasks">
+      <ng-container *ngIf="filteredTasks.length>0 ; else noData">
+        <ng-container *ngFor="let task of filteredTasks">
           <div
             class="col-lg-3 col-md-4 col-sm-6 col-12 hoverOncard scaling-element"
-            *ngIf="
-              searchText === '' || task.title.toLowerCase().includes(searchText)
-            "
           >
             <a
               routerLink="/viewtask/{{ task.id }}"
-              class="card shadow bg-white position-relative h-100 p-2 text-decoration-none"
+              class="card shadow bg-white position-relative task p-2 text-decoration-none"
             >
               <!-- <div class="position-relative ">
               src="https://img.freepik.com/premium-vector/tablet-folder-with-pencil-flat-design-vector-illustration_193165-394.jpg?w=1380"

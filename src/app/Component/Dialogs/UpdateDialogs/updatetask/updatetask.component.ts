@@ -33,7 +33,7 @@ export class UpdatetaskComponent implements OnInit {
     this.TaskID = this.data.task.id
     this.taskTeam = this.data.taskteam
     this.taskTeamLength = this.taskTeam.length
-    console.log(this.taskdetail);
+
     this.setFormValue()
   }
   taskForm() {

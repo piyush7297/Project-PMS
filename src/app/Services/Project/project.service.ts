@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProjectService {
-  url = 'http://192.168.2.212:3000/projects';
+  url = 'http://192.168.2.211:3000/projects';
   // url = 'http://localhost:3000/projects'
   constructor(private http : HttpClient) { }
 
@@ -23,6 +23,9 @@ export class ProjectService {
   getSingleProject(projectId : any)
   {
    return this.http.get(`${this.url}/${projectId}`)
+  }
+  removeProject(projectId : any){
+    return this.http.delete(`${this.url}/${projectId}`)
   }
   updateProject(projectId: any, updatedData: any): Observable<any> {
     return  this.http.patch(`${this.url}/${projectId}`, updatedData)

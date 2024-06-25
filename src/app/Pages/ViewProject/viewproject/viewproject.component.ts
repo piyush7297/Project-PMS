@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectService } from 'src/app/Services/Project/project.service';
 import { TeamService } from 'src/app/Services/Team/team.service';
 import { TeammodelComponent } from 'src/app/Component/Dialogs/teammodel/teammodel.component';
@@ -19,7 +19,7 @@ export class ViewprojectComponent implements OnInit {
   team:any[]=[]
   projectTeam : any[] = [];
   totalTeam : number = 0;
-  constructor(private activateRoute : ActivatedRoute , private projectService : ProjectService , private teamService : TeamService , private dialog : MatDialog) { }
+  constructor(private activateRoute : ActivatedRoute ,private router : Router ,  private projectService : ProjectService , private teamService : TeamService , private dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.getProjectDetail()
@@ -64,7 +64,15 @@ export class ViewprojectComponent implements OnInit {
       data : {
         Content : "Project"
       }
-    });
+    }).afterClosed().subscribe((result : any)=>{
+      if(result.result){
+        this.projectService.removeProject(this.ProjectId).subscribe()
+        this.router.navigate(['/project'])
+      }
+      else{
+        console.log('False');
+      }
+    })
   }
   openUpdatedialog(projectdata : any) {
     const dialogRef = this.dialog.open(UpdateprojectComponent,{

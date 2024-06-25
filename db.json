@@ -15,13 +15,13 @@
     {
       "id": "c09c",
       "name": "Dhiraj",
-      "email": "dhiraj@gmail.com",
-      "phone": "8492834902",
+      "email": "dhirajjoshi@gmail.com",
+      "phone": "8094710089",
       "role": "Tester",
       "address": "Shastri Circle",
       "gender": "Male",
       "profession": "Software Engineer",
-      "salary": "7 LPA to 10 LPA",
+      "salary": "Below 3 LPA",
       "project": "AJM Official"
     },
     {
@@ -325,16 +325,16 @@
       "project": "OrderAxe"
     },
     {
-      "id": "1ec3",
-      "name": "Tesing",
-      "email": "Tesing@g",
-      "phone": "8579040930",
-      "role": "Tesing",
-      "address": "Tesing",
+      "id": "b58f",
+      "name": "Kushal Garg",
+      "email": "kushal@gmail.com",
+      "phone": "8890133332",
+      "role": "Tester",
+      "address": "Abu road",
       "gender": "Male",
       "profession": "IT & Sales",
       "salary": "",
-      "project": "AJM Official"
+      "project": "Adapt"
     }
   ],
   "projects": [
@@ -632,7 +632,7 @@
       "id": "7257",
       "title": "Paginator not working properly",
       "task": "fix paginator issue in team module ",
-      "status": "Pending",
+      "status": "Completed",
       "startdate": "2024-05-23T18:30:00.000Z",
       "enddate": "2024-05-24T18:30:00.000Z",
       "project": "IControl",

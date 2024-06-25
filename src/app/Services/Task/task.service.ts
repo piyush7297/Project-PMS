@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TaskService {
-  url = 'http://192.168.2.212:3000/tasks';
+  url = 'http://192.168.2.211:3000/tasks';
   // url = 'http://localhost:3000/tasks'
   constructor( private http : HttpClient ) { }
 
@@ -23,6 +23,9 @@ export class TaskService {
   }
   getSingleTask(taskId : any){
     return this.http.get(`${this.url}/${taskId}`)
+  }
+  removeTask(taskId : any){
+    return this.http.delete(`${this.url}/${taskId}`)
   }
   updateTask(taskId: number, updatedData: any): Observable<any> {
     return  this.http.patch(`${this.url}/${taskId}`, updatedData)

@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TeamService {
-  url = 'http://192.168.2.212:3000/team';
+  url = 'http://192.168.2.211:3000/team';
   // url = 'http://localhost:3000/team'
   constructor(private http : HttpClient) { }
 

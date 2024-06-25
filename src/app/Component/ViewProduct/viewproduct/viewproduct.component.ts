@@ -40,7 +40,8 @@ export class ViewproductComponent implements OnInit {
   searchText: string = '';
 
   onSearch(searchValue: string) {
-    this.searchText = searchValue
+    this.searchText = searchValue.trim().toLowerCase().replace(/\s/g, '')
+    this.filterOnSearch()
   }
   filterStatus(){
     this.projectform.get('status')?.valueChanges.subscribe((value: string) => {
@@ -65,6 +66,15 @@ export class ViewproductComponent implements OnInit {
       console.log('Selected Category -> ' + this.category);
     })
   }
+  filterOnSearch(){
+    if(this.searchText === ''){
+      this.filteredProjects = this.projects
+      return;
+    }
+    this.filteredProjects = this.projects.filter(project =>
+      project.name.toLowerCase().trim().replace(/\s/g, '').includes(this.searchText)
+    )
+  }
   openProjectDialog() {
     const dialogRef = this.dialog.open(AddproductComponent,{
       panelClass : 'opendialog-container'
@@ -72,6 +82,7 @@ export class ViewproductComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
+      this.getPojects()
     });
   }
 }

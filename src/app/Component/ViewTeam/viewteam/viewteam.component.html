@@ -71,7 +71,7 @@
         <h2 class="text-dark d-flex align-items-center">
           Team <span class="material-icons">navigate_next</span>
           <span class="text-dark"
-            >{{ filteredTeam.length }} <span class="text-dark">Members</span>
+            >{{ teamlength }} <span class="text-dark">Members</span>
           </span>
         </h2>
       </div>
@@ -86,14 +86,11 @@
         <ng-container *ngFor="let team of filteredTeam">
           <div
             class="col-lg-2 col-md-3 col-sm-4 col-6 gy-3 hoverOncard scaling-element"
-            *ngIf="
-              searchText === '' || team.name.toLowerCase().includes(searchText)
-            "
           >
           <div>
           </div>
             <a
-              routerLink="/team/viewmember/{{ team.id }}"
+              routerLink="/team/{{ team.id }}"
               class="card border-0 rounded-3 text-dark text-decoration-none"
             >
               <div *ngIf="team.gender === 'Male'; else female">
@@ -129,7 +126,7 @@
     </div>
     <footer class="fixed-bottom">
       <mat-paginator
-        [length]="allTeam.length"
+        [length]="teamlength"
         [pageSize]="pageSize"
         [pageSizeOptions]="pageSizeOptions"
         aria-label="Select page"

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { TeamService } from 'src/app/Services/Team/team.service';
 import { DeletecomponentComponent } from 'src/app/Component/Dialogs/deletedialog/deletecomponent.component';
 import { UpdatetaskComponent } from 'src/app/Component/Dialogs/UpdateDialogs/updatetask/updatetask.component';
@@ -16,7 +16,7 @@ export class ViewmemberComponent implements OnInit {
   MemberId : any = this.activeroute.snapshot.paramMap.get('id')
   memberdata: any;
 
-  constructor(private teamservice : TeamService ,  private activeroute : ActivatedRoute , private router : Router , public dialog : MatDialog) { }
+  constructor(private teamservice : TeamService ,  private activeroute : ActivatedRoute , private router : Router  , public dialog : MatDialog) { }
 
   ngOnInit(): void {
     this.getMember()
@@ -36,12 +36,21 @@ export class ViewmemberComponent implements OnInit {
     });
   }
   openremoveDialog(): void {
-    const dialogRef = this.dialog.open(DeletecomponentComponent, {
+     this.dialog.open(DeletecomponentComponent, {
       data : {
         MemberId : this.MemberId,
-        Content : "Member"
+        Content : "Member",
+        delete_item : "Member"
       }
-    });
+    }).afterClosed().subscribe((result : any) => {
+      if(result.result){
+        this.teamservice.removeMember(this.MemberId).subscribe()
+        this.router.navigate(['/team'])
+      }
+      else{
+        console.log('Result false');
+      }
+    })
     // dialogRef.afterClosed(DeletecomponentComponent);
     // .afterClosed().subscribe((data :any) => {
     //   console.log(data);

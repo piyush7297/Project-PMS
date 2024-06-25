@@ -75,12 +75,9 @@
       <ng-container *ngFor="let project of filteredProjects">
         <div
           class="col-lg-3 col-md-4 col-sm-6 col-12 hoverOncard scaling-element"
-          *ngIf="
-            searchText === '' || project.name.toLowerCase().includes(searchText)
-          "
         >
           <a
-            routerLink="/project/viewproject/{{ project.id }}"
+            routerLink="/project/{{ project.id }}"
             class="card shadow-lg border border-2 border-warning rounded-3 text-white bg-dark text-decoration-none"
           >
             <div>
