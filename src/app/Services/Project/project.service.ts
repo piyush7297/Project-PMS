@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ProjectService {
-  url = 'http://192.168.2.211:3000/projects';
+  url = 'http://192.168.2.210:3000/projects';
   // url = 'http://localhost:3000/projects'
   constructor(private http : HttpClient) { }
 

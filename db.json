@@ -335,6 +335,18 @@
       "profession": "IT & Sales",
       "salary": "",
       "project": "Adapt"
+    },
+    {
+      "id": "dfe2",
+      "name": "dfs",
+      "email": "df@gmail",
+      "phone": "3434434345",
+      "role": "dsf",
+      "address": "sdfg",
+      "gender": "Male",
+      "profession": "Software Engineer",
+      "salary": "Below 3 LPA",
+      "project": "OrderAxe"
     }
   ],
   "projects": [
@@ -832,6 +844,53 @@
           "profession": "Software Engineer",
           "salary": "Below 3 LPA",
           "project": "IControl"
+        }
+      ]
+    },
+    {
+      "id": "0704",
+      "title": "GTHDH",
+      "task": "FHH",
+      "status": "Pending",
+      "startdate": "2024-06-27T18:30:00.000Z",
+      "enddate": "2024-06-28T18:30:00.000Z",
+      "project": "OrderAxe",
+      "taskteam": [
+        {
+          "id": "8d05",
+          "name": "Khushal Soni",
+          "email": "khushalsoni@gmail.com",
+          "phone": "9827479202",
+          "role": "Web Developer",
+          "address": "Sojati Gate",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Above 10 LPA",
+          "project": "OrderAxe"
+        },
+        {
+          "id": "c09c",
+          "name": "Dhiraj",
+          "email": "dhirajjoshi@gmail.com",
+          "phone": "8094710089",
+          "role": "Tester",
+          "address": "Shastri Circle",
+          "gender": "Male",
+          "profession": "Software Engineer",
+          "salary": "Below 3 LPA",
+          "project": "AJM Official"
+        },
+        {
+          "id": "2676",
+          "name": "Vipul ",
+          "email": "vipul99@gmail.com",
+          "phone": "8301833874",
+          "role": "Business Developer",
+          "address": "Sardarpura , Jodhpur",
+          "gender": "Male",
+          "profession": "IT & Sales",
+          "salary": "5 LPA to 7 LPA",
+          "project": "AJM Official"
         }
       ]
     }

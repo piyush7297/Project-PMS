@@ -8,7 +8,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TaskService {
-  url = 'http://192.168.2.211:3000/tasks';
+  url = 'http://192.168.2.210:3000/tasks';
   // url = 'http://localhost:3000/tasks'
   constructor( private http : HttpClient ) { }
 

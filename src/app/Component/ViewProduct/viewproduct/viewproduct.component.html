@@ -71,47 +71,47 @@
         collaborates seamlessly to tackle challenges and deliver exceptional
         results.
       </p>
-     <ng-container *ngIf="filteredProjects.length > 0 ; else noData">
-      <ng-container *ngFor="let project of filteredProjects">
-        <div
-          class="col-lg-3 col-md-4 col-sm-6 col-12 hoverOncard scaling-element"
-        >
-          <a
-            routerLink="/project/{{ project.id }}"
-            class="card shadow-lg border border-2 border-warning rounded-3 text-white bg-dark text-decoration-none"
+      <ng-container *ngIf="filteredProjects.length > 0; else noData">
+        <ng-container *ngFor="let project of filteredProjects">
+          <div
+            class="col-lg-3 col-md-4 col-sm-6 col-12 hoverOncard scaling-element"
           >
-            <div>
-              <div class="position-relative">
-                <img
-                  class="card-img-top bg-white img-fluid"
-                  src="https://img.freepik.com/free-vector/men-teamwork-with-gears-induatry-bulb-idea_24877-54770.jpg?w=740&t=st=1714375888~exp=1714376488~hmac=97ca0d93158e290c0a58545f9ff3dc070c24a524192d6926126551a870a036a0"
-                  alt="..."
-                />
-              </div>
-              <span
-                class="position-absolute z-1 end-0 p-1 text-white rounded-1 top-0 bg-success top-0 fw-bold"
-                *ngIf="project.status === 'Completed'; else pending"
-              >
-                {{ project.status }}</span
-              >
-              <ng-template #pending>
+            <a
+              routerLink="/project/{{ project.id }}"
+              class="card shadow-lg border border-2 border-warning rounded-3 text-white bg-dark text-decoration-none"
+            >
+              <div>
+                <div class="position-relative">
+                  <img
+                    class="card-img-top bg-white img-fluid"
+                    src="https://img.freepik.com/free-vector/men-teamwork-with-gears-induatry-bulb-idea_24877-54770.jpg?w=740&t=st=1714375888~exp=1714376488~hmac=97ca0d93158e290c0a58545f9ff3dc070c24a524192d6926126551a870a036a0"
+                    alt="..."
+                  />
+                </div>
                 <span
-                  class="position-absolute z-1 end-0 p-1 text-white top-0 bg-danger rounded-1 fw-bold"
+                  class="position-absolute z-1 end-0 p-1 text-white rounded-1 top-0 bg-success top-0 fw-bold"
+                  *ngIf="project.status === 'Completed'; else pending"
                 >
                   {{ project.status }}</span
                 >
-              </ng-template>
-            </div>
-            <div class="p-2">
-              <h3 class="fw-bold m-0 py-1">{{ project.name }}</h3>
-              <p class="">Started : {{ project.started |  date}}</p>
-              <!-- <span class="position-absolute bottom-0 end-0 text-dark px-1 fw-bold m-0 pb-1">Category : {{project.category}}</span> -->
-              <p class="">Category : {{ project.category }}</p>
-            </div>
-          </a>
-        </div>
+                <ng-template #pending>
+                  <span
+                    class="position-absolute z-1 end-0 p-1 text-white top-0 bg-danger rounded-1 fw-bold"
+                  >
+                    {{ project.status }}</span
+                  >
+                </ng-template>
+              </div>
+              <div class="p-2">
+                <h3 class="fw-bold m-0 py-1">{{ project.name }}</h3>
+                <p class="">Started : {{ project.started | date }}</p>
+                <!-- <span class="position-absolute bottom-0 end-0 text-dark px-1 fw-bold m-0 pb-1">Category : {{project.category}}</span> -->
+                <p class="">Category : {{ project.category }}</p>
+              </div>
+            </a>
+          </div>
+        </ng-container>
       </ng-container>
-     </ng-container>
       <ng-template #noData>
         <h2 class="text-danger">No Project Found !</h2>
       </ng-template>

@@ -104,7 +104,7 @@ export class ViewteamComponent implements OnInit {
   filterCategory() {
     this.teamForm.get('Profession')?.valueChanges.subscribe((value: string) => {
       this.professionValue = value
-      console.log(value);
+      console.log(value); 
       if (this.professionValue === 'All') {
         this.filteredTeam = this.allTeam
         this.teamlength = this.allTeam.length
